@@ -12,6 +12,7 @@ namespace test_portal
 {
     public partial class Main_admin : Form
     {
+        private Form activeForm;
         public Main_admin()
         {
             InitializeComponent();
@@ -24,6 +25,21 @@ namespace test_portal
             this.Hide();
         }
 
+        public void OpenChildForm(Form childform, object Sender)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childform;
+            childform.TopLevel = false;
+            childform.FormBorderStyle = FormBorderStyle.None;
+            childform.Dock = DockStyle.Fill;
+            this.panelDesktop.Controls.Add(childform);
+            this.panelDesktop.Tag = childform;
+            childform.BringToFront();
+            childform.Show();
+        }
         private void Main_admin_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();

@@ -35,7 +35,7 @@
             this.account = new System.Windows.Forms.Button();
             this.paneltitle = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panelDeskstop = new System.Windows.Forms.Panel();
+            this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelmenu.SuspendLayout();
             this.paneltitle.SuspendLayout();
             this.SuspendLayout();
@@ -131,13 +131,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Main";
             // 
-            // panelDeskstop
+            // panelDesktop
             // 
-            this.panelDeskstop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDeskstop.Location = new System.Drawing.Point(0, 79);
-            this.panelDeskstop.Name = "panelDeskstop";
-            this.panelDeskstop.Size = new System.Drawing.Size(808, 514);
-            this.panelDeskstop.TabIndex = 3;
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(0, 79);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(808, 514);
+            this.panelDesktop.TabIndex = 3;
             // 
             // Main_admin
             // 
@@ -145,7 +145,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(1032, 593);
-            this.Controls.Add(this.panelDeskstop);
+            this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.paneltitle);
             this.Controls.Add(this.panelmenu);
             this.Name = "Main_admin";
@@ -168,6 +168,6 @@
         private System.Windows.Forms.Button account;
         private System.Windows.Forms.Panel paneltitle;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panelDeskstop;
+        private System.Windows.Forms.Panel panelDesktop;
     }
 }

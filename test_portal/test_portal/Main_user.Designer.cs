@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.panelmenu = new System.Windows.Forms.Panel();
+            this.exit = new System.Windows.Forms.Button();
+            this.settings = new System.Windows.Forms.Button();
+            this.tests = new System.Windows.Forms.Button();
             this.account = new System.Windows.Forms.Button();
             this.paneltitle = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panelDeskstop = new System.Windows.Forms.Panel();
-            this.tests = new System.Windows.Forms.Button();
-            this.settings = new System.Windows.Forms.Button();
-            this.exit = new System.Windows.Forms.Button();
+            this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelmenu.SuspendLayout();
             this.paneltitle.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +52,46 @@
             this.panelmenu.Name = "panelmenu";
             this.panelmenu.Size = new System.Drawing.Size(224, 593);
             this.panelmenu.TabIndex = 0;
+            // 
+            // exit
+            // 
+            this.exit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.exit.FlatAppearance.BorderSize = 0;
+            this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.exit.Location = new System.Drawing.Point(0, 201);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(224, 61);
+            this.exit.TabIndex = 3;
+            this.exit.Text = "Exit";
+            this.exit.UseVisualStyleBackColor = true;
+            this.exit.Click += new System.EventHandler(this.exit_Click);
+            // 
+            // settings
+            // 
+            this.settings.Dock = System.Windows.Forms.DockStyle.Top;
+            this.settings.FlatAppearance.BorderSize = 0;
+            this.settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.settings.Location = new System.Drawing.Point(0, 140);
+            this.settings.Name = "settings";
+            this.settings.Size = new System.Drawing.Size(224, 61);
+            this.settings.TabIndex = 2;
+            this.settings.Text = "Settings";
+            this.settings.UseVisualStyleBackColor = true;
+            // 
+            // tests
+            // 
+            this.tests.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tests.FlatAppearance.BorderSize = 0;
+            this.tests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tests.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tests.Location = new System.Drawing.Point(0, 79);
+            this.tests.Name = "tests";
+            this.tests.Size = new System.Drawing.Size(224, 61);
+            this.tests.TabIndex = 1;
+            this.tests.Text = "Tests";
+            this.tests.UseVisualStyleBackColor = true;
             // 
             // account
             // 
@@ -91,53 +131,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Main";
             // 
-            // panelDeskstop
+            // panelDesktop
             // 
-            this.panelDeskstop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDeskstop.Location = new System.Drawing.Point(0, 79);
-            this.panelDeskstop.Name = "panelDeskstop";
-            this.panelDeskstop.Size = new System.Drawing.Size(808, 514);
-            this.panelDeskstop.TabIndex = 2;
-            // 
-            // tests
-            // 
-            this.tests.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tests.FlatAppearance.BorderSize = 0;
-            this.tests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tests.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tests.Location = new System.Drawing.Point(0, 79);
-            this.tests.Name = "tests";
-            this.tests.Size = new System.Drawing.Size(224, 61);
-            this.tests.TabIndex = 1;
-            this.tests.Text = "Tests";
-            this.tests.UseVisualStyleBackColor = true;
-            // 
-            // settings
-            // 
-            this.settings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.settings.FlatAppearance.BorderSize = 0;
-            this.settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.settings.Location = new System.Drawing.Point(0, 140);
-            this.settings.Name = "settings";
-            this.settings.Size = new System.Drawing.Size(224, 61);
-            this.settings.TabIndex = 2;
-            this.settings.Text = "Settings";
-            this.settings.UseVisualStyleBackColor = true;
-            // 
-            // exit
-            // 
-            this.exit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.exit.FlatAppearance.BorderSize = 0;
-            this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exit.Location = new System.Drawing.Point(0, 201);
-            this.exit.Name = "exit";
-            this.exit.Size = new System.Drawing.Size(224, 61);
-            this.exit.TabIndex = 3;
-            this.exit.Text = "Exit";
-            this.exit.UseVisualStyleBackColor = true;
-            this.exit.Click += new System.EventHandler(this.exit_Click);
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(0, 79);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(808, 514);
+            this.panelDesktop.TabIndex = 2;
             // 
             // Main_user
             // 
@@ -145,7 +145,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(1032, 593);
-            this.Controls.Add(this.panelDeskstop);
+            this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.paneltitle);
             this.Controls.Add(this.panelmenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -165,7 +165,7 @@
         private System.Windows.Forms.Panel panelmenu;
         private System.Windows.Forms.Button account;
         private System.Windows.Forms.Panel paneltitle;
-        private System.Windows.Forms.Panel panelDeskstop;
+        private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button tests;
         private System.Windows.Forms.Button settings;

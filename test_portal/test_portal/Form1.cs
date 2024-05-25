@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace test_portal
 {
@@ -30,9 +31,26 @@ namespace test_portal
             Application.Exit();
         }
 
+        private bool isInputValid()
+        {
+            if (log_in.Text == "")
+            {
+                MessageBox.Show("login empty");
+                return false;
+            }
+            else if (password.Text == "")
+            {
+                MessageBox.Show("password empty");
+                return false;
+            }
+            return true;
+        }
+
         private void Avtorizate_Click(object sender, EventArgs e)
         {
-            if(log_in.Text == "admin" && password.Text.ToString() == "123456789")
+            if (!isInputValid()) return;
+
+            if (log_in.Text == "admin" && password.Text.ToString() == "123456789")
             {
                 Main_admin main_Admin = new Main_admin();
                 main_Admin.Show();

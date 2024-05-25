@@ -38,7 +38,7 @@
             // 
             // create
             // 
-            this.create.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.create.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.create.FlatAppearance.BorderSize = 0;
             this.create.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.create.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -46,8 +46,9 @@
             this.create.Name = "create";
             this.create.Size = new System.Drawing.Size(169, 44);
             this.create.TabIndex = 21;
-            this.create.Text = "Sign in";
+            this.create.Text = "Create";
             this.create.UseVisualStyleBackColor = false;
+            this.create.Click += new System.EventHandler(this.create_Click);
             // 
             // label2
             // 
@@ -72,14 +73,14 @@
             // title_createacc
             // 
             this.title_createacc.AutoSize = true;
-            this.title_createacc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.title_createacc.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.title_createacc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.title_createacc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.title_createacc.Location = new System.Drawing.Point(191, 38);
+            this.title_createacc.Location = new System.Drawing.Point(155, 48);
             this.title_createacc.Name = "title_createacc";
-            this.title_createacc.Size = new System.Drawing.Size(72, 25);
+            this.title_createacc.Size = new System.Drawing.Size(145, 25);
             this.title_createacc.TabIndex = 18;
-            this.title_createacc.Text = "Sign in";
+            this.title_createacc.Text = "Create account";
             // 
             // last_name
             // 
@@ -113,7 +114,9 @@
             this.Controls.Add(this.last_name);
             this.Controls.Add(this.first_name);
             this.Name = "Create_acc";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create_acc";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Create_acc_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 

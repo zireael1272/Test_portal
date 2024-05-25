@@ -12,6 +12,7 @@ namespace test_portal
 {
     public partial class Main_user : Form
     {
+        private Form activeForm;
         public Main_user()
         {
             InitializeComponent();
@@ -22,6 +23,22 @@ namespace test_portal
             Application.Exit();
         }
 
+
+        public void OpenChildForm(Form childform, object Sender)
+        {
+            if (activeForm != null)
+            {
+                activeForm.Close();
+            }
+            activeForm = childform;
+            childform.TopLevel = false;
+            childform.FormBorderStyle = FormBorderStyle.None;
+            childform.Dock = DockStyle.Fill;
+            this.panelDesktop.Controls.Add(childform);
+            this.panelDesktop.Tag = childform;
+            childform.BringToFront();
+            childform.Show();
+        }
         private void exit_Click(object sender, EventArgs e)
         {
             login login = new login();
