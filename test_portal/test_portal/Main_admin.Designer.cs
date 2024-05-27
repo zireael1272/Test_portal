@@ -79,6 +79,7 @@
             this.settings.TabIndex = 2;
             this.settings.Text = "Settings";
             this.settings.UseVisualStyleBackColor = true;
+            this.settings.Click += new System.EventHandler(this.settings_Click);
             // 
             // create_test
             // 
@@ -92,6 +93,7 @@
             this.create_test.TabIndex = 1;
             this.create_test.Text = "Create test";
             this.create_test.UseVisualStyleBackColor = true;
+            this.create_test.Click += new System.EventHandler(this.create_test_Click);
             // 
             // account
             // 

@@ -59,6 +59,24 @@
     <Compile Include="forms\Create_acc.Designer.cs">
       <DependentUpon>Create_acc.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Create_test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Create_test.Designer.cs">
+      <DependentUpon>Create_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Settings_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Settings_user.Designer.cs">
+      <DependentUpon>Settings_user.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main_admin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +102,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Create_acc.resx">
       <DependentUpon>Create_acc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Create_test.resx">
+      <DependentUpon>Create_test.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Settings_user.resx">
+      <DependentUpon>Settings_user.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_admin.resx">
       <DependentUpon>Main_admin.cs</DependentUpon>

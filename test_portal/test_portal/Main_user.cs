@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using test_portal.forms;
 
 namespace test_portal
 {
@@ -41,9 +43,28 @@ namespace test_portal
         }
         private void exit_Click(object sender, EventArgs e)
         {
-            login login = new login();
-            login.Show();
-            this.Hide();
+            List<Form> formsToClose = new List<Form>(Application.OpenForms.Cast<Form>());
+
+            foreach (Form form in formsToClose)
+            {
+                if (form != this)
+                {
+                    form.Close();
+                }
+            }
+
+            Thread thread = new Thread(() =>
+            {
+                Application.Run(new login());
+            });
+
+            thread.Start();
+        }
+
+        private void settings_Click(object sender, EventArgs e)
+        {
+            Settings_user settings_User = new Settings_user();
+            OpenChildForm(settings_User, sender);
         }
     }
 }

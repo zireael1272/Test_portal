@@ -3,28 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|c:\\users\\user\\desktop\\test_portal\\test_portal\\test_portal\\forms\\create_acc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\forms\\create_acc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|c:\\users\\user\\desktop\\test_portal\\test_portal\\test_portal\\main_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\main_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|c:\\users\\user\\desktop\\test_portal\\test_portal\\test_portal\\forms\\settings_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\forms\\settings_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\classes\\data_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\classes\\data_base.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|c:\\users\\user\\desktop\\test_portal\\test_portal\\test_portal\\main_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\main_user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\sign_in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\sign_in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|c:\\users\\user\\desktop\\test_portal\\test_portal\\test_portal\\main_admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\main_admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\sign_in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\sign_in.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|c:\\users\\user\\desktop\\test_portal\\test_portal\\test_portal\\main_admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\main_admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|c:\\users\\user\\desktop\\test_portal\\test_portal\\test_portal\\forms\\create_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\forms\\create_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|c:\\users\\user\\desktop\\test_portal\\test_portal\\test_portal\\forms\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\forms\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|c:\\users\\user\\desktop\\test_portal\\test_portal\\test_portal\\forms\\create_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\forms\\create_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,73 +51,101 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Create_acc.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Create_acc.cs",
-              "RelativeDocumentMoniker": "test_portal\\forms\\Create_acc.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Create_acc.cs",
-              "RelativeToolTip": "test_portal\\forms\\Create_acc.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAYwCwAAAA5AAAA",
+              "Title": "Main_user.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\Main_user.cs",
+              "RelativeDocumentMoniker": "test_portal\\Main_user.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\Main_user.cs",
+              "RelativeToolTip": "test_portal\\Main_user.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAkwEIAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-25T18:38:04.906Z",
+              "WhenOpened": "2024-05-27T07:23:35.205Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Data_Base.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\classes\\Data_Base.cs",
-              "RelativeDocumentMoniker": "test_portal\\classes\\Data_Base.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\classes\\Data_Base.cs",
-              "RelativeToolTip": "test_portal\\classes\\Data_Base.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAANAAAA",
+              "DocumentIndex": 1,
+              "Title": "Settings_user.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Settings_user.cs",
+              "RelativeDocumentMoniker": "test_portal\\forms\\Settings_user.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Settings_user.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "test_portal\\forms\\Settings_user.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T13:29:24.426Z"
+              "WhenOpened": "2024-05-27T07:23:08.786Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Main_user.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\Main_user.cs",
+              "RelativeDocumentMoniker": "test_portal\\Main_user.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\Main_user.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "test_portal\\Main_user.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T07:22:46.443Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Settings.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Settings.cs",
+              "RelativeDocumentMoniker": "test_portal\\forms\\Settings.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Settings.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "test_portal\\forms\\Settings.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T07:18:35.722Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Create_test.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Create_test.cs",
+              "RelativeDocumentMoniker": "test_portal\\forms\\Create_test.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Create_test.cs",
+              "RelativeToolTip": "test_portal\\forms\\Create_test.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T07:15:02.016Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\Form1.cs",
-              "RelativeDocumentMoniker": "test_portal\\Form1.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "test_portal\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Title": "Create_test.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Create_test.cs",
+              "RelativeDocumentMoniker": "test_portal\\forms\\Create_test.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Create_test.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "test_portal\\forms\\Create_test.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T14:40:38.888Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\Form1.cs",
-              "RelativeDocumentMoniker": "test_portal\\Form1.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\Form1.cs",
-              "RelativeToolTip": "test_portal\\Form1.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAAwCgAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T16:37:51.569Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "sign_in.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\sign_in.cs",
-              "RelativeDocumentMoniker": "test_portal\\sign_in.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\sign_in.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "test_portal\\sign_in.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T16:36:01.472Z"
+              "WhenOpened": "2024-05-27T07:14:03.506Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "sign_in.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\sign_in.cs",
-              "RelativeDocumentMoniker": "test_portal\\sign_in.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\sign_in.cs",
-              "RelativeToolTip": "test_portal\\sign_in.cs",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAuwD8AAAAYAAAA",
+              "Title": "Main_admin.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\Main_admin.cs",
+              "RelativeDocumentMoniker": "test_portal\\Main_admin.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\Main_admin.cs",
+              "RelativeToolTip": "test_portal\\Main_admin.cs",
+              "ViewState": "AQIAADkAAAAAAAAAAAA6wEcAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T16:38:44.725Z"
+              "WhenOpened": "2024-05-27T07:15:20.853Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Main_admin.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\Main_admin.cs",
+              "RelativeDocumentMoniker": "test_portal\\Main_admin.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\Main_admin.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "test_portal\\Main_admin.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T07:13:36.825Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             }
           ]
         }
