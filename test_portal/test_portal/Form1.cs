@@ -9,14 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using test_portal.classes;
 
 namespace test_portal
 {
     public partial class login : Form
     {
+        public DataBaseOperation dataBaseOperation { get; set; }
         public login()
         {
             InitializeComponent();
+            dataBaseOperation = new DataBaseOperation();
         }
 
         private void sign_in_Click(object sender, EventArgs e)
@@ -48,15 +51,23 @@ namespace test_portal
 
         private void Avtorizate_Click(object sender, EventArgs e)
         {
+            LoginInput input = new LoginInput(log_in.Text, password.Text);
             if (!isInputValid()) return;
 
-            if (log_in.Text == "admin" && password.Text.ToString() == "123456789")
+            Account accountObj = dataBaseOperation.GetAccountByUsername(input);
+            if (accountObj == null)
+            {
+                MessageBox.Show("Error", "Account not");
+                return;
+            }
+
+            if(accountObj.Role == "Admin")
             {
                 Main_admin main_Admin = new Main_admin();
                 main_Admin.Show();
                 this.Hide();
             }
-            else if(log_in.Text == "user" && password.Text.ToString() == "123456789")
+            else if(accountObj.Role == "User")
             {
                 Main_user main = new Main_user();
                 main.Show();

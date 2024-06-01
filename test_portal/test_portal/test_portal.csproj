@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="classes\Data_Base.cs" />
+    <Compile Include="classes\Account.cs" />
+    <Compile Include="classes\DataBaseOperation.cs" />
+    <Compile Include="classes\LoginInput.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
