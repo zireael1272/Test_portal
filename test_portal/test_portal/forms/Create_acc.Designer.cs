@@ -54,7 +54,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(105, 194);
+            this.label2.Location = new System.Drawing.Point(105, 216);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 20);
             this.label2.TabIndex = 20;
@@ -64,7 +64,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(105, 124);
+            this.label1.Location = new System.Drawing.Point(105, 146);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 19;
@@ -84,22 +84,23 @@
             // 
             // last_name
             // 
-            this.last_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.last_name.Location = new System.Drawing.Point(105, 215);
+            this.last_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.last_name.Location = new System.Drawing.Point(105, 237);
             this.last_name.Multiline = true;
             this.last_name.Name = "last_name";
-            this.last_name.PasswordChar = '*';
             this.last_name.Size = new System.Drawing.Size(243, 34);
             this.last_name.TabIndex = 17;
+            this.last_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.last_name_KeyDown);
             // 
             // first_name
             // 
             this.first_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.first_name.Location = new System.Drawing.Point(105, 146);
+            this.first_name.Location = new System.Drawing.Point(105, 168);
             this.first_name.Multiline = true;
             this.first_name.Name = "first_name";
             this.first_name.Size = new System.Drawing.Size(243, 34);
             this.first_name.TabIndex = 16;
+            this.first_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.first_name_KeyDown);
             // 
             // Create_acc
             // 

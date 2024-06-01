@@ -9,14 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using test_portal.forms;
 using System.Data.OleDb;
+using test_portal.classes;
 
 namespace test_portal
 {
     public partial class sign_in : Form
     {
+        public DataBaseOperation dataBaseOperation { get; set; }
         public sign_in()
         {
             InitializeComponent();
+            dataBaseOperation = new DataBaseOperation();
         }
 
         private void back_Click(object sender, EventArgs e)
@@ -59,9 +62,14 @@ namespace test_portal
         private void sign_Click(object sender, EventArgs e)
         {
             if (!isInputValid()) return;
-            Create_acc create_Acc = new Create_acc();
+
+            string newlogin = log_in.Text;
+            string newpassword = password.Text;
+            Account newaccount = new Account(3, newlogin, newpassword, "User","","");
+            Create_acc create_Acc = new Create_acc(newaccount);
             create_Acc.Show();
             this.Hide();
+
         }
 
         private void log_in_KeyDown(object sender, KeyEventArgs e)

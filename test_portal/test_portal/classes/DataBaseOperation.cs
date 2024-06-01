@@ -28,6 +28,12 @@ namespace test_portal.classes
 
         public Account GetAccountByUsername(LoginInput input)
         {
+            if (_dbConnection.State != System.Data.ConnectionState.Open)
+            {
+                MessageBox.Show("Database connection is not open.", "Error");
+                return null;
+            }
+
             string query = "SELECT UserID, Username, Password, Role FROM Users WHERE Username = ? AND Password = ?";
             try
             {
@@ -43,7 +49,9 @@ namespace test_portal.classes
                             string dbUsername = dbDataReader["Username"].ToString();
                             string dbPassword = dbDataReader["Password"].ToString();
                             string dbRole = dbDataReader["Role"].ToString();
-                            return new Account(id, dbUsername, dbPassword, dbRole);
+                            string dbFirstName = dbDataReader["FirstName"].ToString();
+                            string dbLastName = dbDataReader["LastName"].ToString();
+                            return new Account(id, dbUsername, dbPassword, dbRole, dbFirstName, dbLastName);
                         }
                         else
                         {
@@ -57,6 +65,46 @@ namespace test_portal.classes
             {
                 MessageBox.Show($"Failed to execute query: {ex.Message}", "Error");
                 return null;
+            }
+        }
+
+        public bool RegisterNewAccount(Account newAccount)
+        {
+            if (_dbConnection.State != System.Data.ConnectionState.Open)
+            {
+                MessageBox.Show("Database connection is not open.", "Error");
+                return false;
+            }
+
+            string query = "INSERT INTO Users (Username, [Password], [Role], FirstName, LastName) VALUES (?, ?, ?, ?, ?)";
+            try
+            {
+                using (OleDbCommand dbCommand = new OleDbCommand(query, _dbConnection))
+                {
+                    dbCommand.Parameters.AddWithValue("Username", newAccount.Username);
+                    dbCommand.Parameters.AddWithValue("Password", newAccount.Password);
+                    dbCommand.Parameters.AddWithValue("Role", newAccount.Role);
+                    dbCommand.Parameters.AddWithValue("FirstName", newAccount.FirstName);
+                    dbCommand.Parameters.AddWithValue("LastName", newAccount.LastName);
+
+                    int rowsAffected = dbCommand.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Account registered successfully.", "Success");
+                        return true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to register account.", "Error");
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to execute query: {ex.Message}", "Error");
+                return false;
             }
         }
 
