@@ -34,6 +34,7 @@
             this.title_createacc = new System.Windows.Forms.Label();
             this.last_name = new System.Windows.Forms.TextBox();
             this.first_name = new System.Windows.Forms.TextBox();
+            this.returnlogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // create
@@ -102,12 +103,27 @@
             this.first_name.TabIndex = 16;
             this.first_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.first_name_KeyDown);
             // 
+            // returnlogin
+            // 
+            this.returnlogin.FlatAppearance.BorderSize = 0;
+            this.returnlogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.returnlogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.returnlogin.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.returnlogin.Location = new System.Drawing.Point(142, 441);
+            this.returnlogin.Name = "returnlogin";
+            this.returnlogin.Size = new System.Drawing.Size(169, 35);
+            this.returnlogin.TabIndex = 22;
+            this.returnlogin.Text = "return log in";
+            this.returnlogin.UseVisualStyleBackColor = true;
+            this.returnlogin.Click += new System.EventHandler(this.returnlogin_Click);
+            // 
             // Create_acc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(452, 523);
+            this.Controls.Add(this.returnlogin);
             this.Controls.Add(this.create);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -130,5 +146,6 @@
         private System.Windows.Forms.Label title_createacc;
         private System.Windows.Forms.TextBox last_name;
         private System.Windows.Forms.TextBox first_name;
+        private System.Windows.Forms.Button returnlogin;
     }
 }

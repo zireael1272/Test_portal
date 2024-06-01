@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using test_portal.classes;
 using test_portal.forms;
 
 namespace test_portal
@@ -15,29 +16,14 @@ namespace test_portal
     public partial class Main_admin : Form
     {
         private Form activeForm;
-        public Main_admin()
+        private DataBaseOperation dataBaseOperation { get; set; }
+        private Account accountObj { get; set; }
+        public Main_admin(Account accountObj)
         {
             InitializeComponent();
-        }
-
-        private void exit_Click(object sender, EventArgs e)
-        {
-            List<Form> formsToClose = new List<Form>(Application.OpenForms.Cast<Form>());
-
-            foreach (Form form in formsToClose)
-            {
-                if (form != this)
-                {
-                    form.Close();
-                }
-            }
-
-            Thread thread = new Thread(() =>
-            {
-                Application.Run(new login());
-            });
-
-            thread.Start();
+            dataBaseOperation = new DataBaseOperation();
+            this.accountObj = accountObj;
+            nametitle.Text = this.accountObj.LastName + "\n" + this.accountObj.FirstName;
         }
 
         public void OpenChildForm(Form childform, object Sender)
@@ -60,16 +46,37 @@ namespace test_portal
             Application.Exit();
         }
 
-        private void create_test_Click(object sender, EventArgs e)
+
+        private void create_test_Click_1(object sender, EventArgs e)
         {
             Create_test create_Test = new Create_test();
             OpenChildForm(create_Test, sender);
         }
 
-        private void settings_Click(object sender, EventArgs e)
+        private void settings_Click_1(object sender, EventArgs e)
         {
             Settings settings = new Settings();
             OpenChildForm(settings, sender);
+        }
+
+        private void exit_Click_1(object sender, EventArgs e)
+        {
+            List<Form> formsToClose = new List<Form>(Application.OpenForms.Cast<Form>());
+
+            foreach (Form form in formsToClose)
+            {
+                if (form != this)
+                {
+                    form.Close();
+                }
+            }
+
+            Thread thread = new Thread(() =>
+            {
+                Application.Run(new login());
+            });
+
+            thread.Start();
         }
     }
 }

@@ -65,7 +65,7 @@ namespace test_portal.forms
             AccountObj.LastName = last_name.Text;
             if (dataBaseOperation.RegisterNewAccount(AccountObj))
             {
-                Main_user main_User = new Main_user();
+                Main_user main_User = new Main_user(AccountObj);
                 main_User.Show();
                 this.Hide();
             }
@@ -91,6 +91,13 @@ namespace test_portal.forms
                 e.SuppressKeyPress = true;
                 create.PerformClick();
             }
+        }
+
+        private void returnlogin_Click(object sender, EventArgs e)
+        {
+            login login = new login();
+            login.Show();
+            this.Hide();
         }
     }
 }

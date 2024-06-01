@@ -15,7 +15,7 @@ namespace test_portal
 {
     public partial class login : Form
     {
-        public DataBaseOperation dataBaseOperation { get; set; }
+        private DataBaseOperation dataBaseOperation { get; set; }
         public login()
         {
             InitializeComponent();
@@ -63,13 +63,13 @@ namespace test_portal
 
             if(accountObj.Role == "Admin")
             {
-                Main_admin main_Admin = new Main_admin();
+                Main_admin main_Admin = new Main_admin(accountObj);
                 main_Admin.Show();
                 this.Hide();
             }
             else if(accountObj.Role == "User")
             {
-                Main_user main = new Main_user();
+                Main_user main = new Main_user(accountObj);
                 main.Show();
                 this.Hide();
             }

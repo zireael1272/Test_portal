@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using test_portal.classes;
 using test_portal.forms;
 
 namespace test_portal
@@ -15,9 +16,12 @@ namespace test_portal
     public partial class Main_user : Form
     {
         private Form activeForm;
-        public Main_user()
+        private Account accountObj { get; set; }
+        public Main_user(Account accountObj)
         {
             InitializeComponent();
+            this.accountObj = accountObj;
+            nametitle.Text = this.accountObj.LastName + "\n" + this.accountObj.FirstName;
         }
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
@@ -41,7 +45,20 @@ namespace test_portal
             childform.BringToFront();
             childform.Show();
         }
-        private void exit_Click(object sender, EventArgs e)
+
+
+        private void tests_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void settings_Click_1(object sender, EventArgs e)
+        {
+            Settings_user settings_User = new Settings_user();
+            OpenChildForm(settings_User, sender);
+        }
+
+        private void exit_Click_1(object sender, EventArgs e)
         {
             List<Form> formsToClose = new List<Form>(Application.OpenForms.Cast<Form>());
 
@@ -59,12 +76,6 @@ namespace test_portal
             });
 
             thread.Start();
-        }
-
-        private void settings_Click(object sender, EventArgs e)
-        {
-            Settings_user settings_User = new Settings_user();
-            OpenChildForm(settings_User, sender);
         }
     }
 }

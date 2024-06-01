@@ -16,9 +16,19 @@ namespace test_portal.forms
         public Create_test()
         {
             InitializeComponent();
+            numberAnswers.Wrap = false;
+            numberAnswers.Items.Add(6);
+            numberAnswers.Items.Add(5);
+            numberAnswers.Items.Add(4);
+            numberAnswers.Items.Add(3);
+            numberAnswers.Items.Add(2);
+            numberAnswers.Items.Add(1);
+            numberAnswers.Items.Add(0);
+            numberAnswers.SelectedIndex = 6;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+        private void createTest_Click(object sender, EventArgs e)
         {
 
         }

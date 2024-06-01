@@ -34,7 +34,7 @@ namespace test_portal.classes
                 return null;
             }
 
-            string query = "SELECT UserID, Username, Password, Role FROM Users WHERE Username = ? AND Password = ?";
+            string query = "SELECT UserID, Username, Password, Role, FirstName, LastName FROM Users WHERE Username = ? AND Password = ?";
             try
             {
                 using (OleDbCommand dbCommand = new OleDbCommand(query, _dbConnection))
@@ -63,7 +63,7 @@ namespace test_portal.classes
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to execute query: {ex.Message}", "Error");
+                MessageBox.Show($"{ex.Message}", "Error");
                 return null;
             }
         }
@@ -103,7 +103,7 @@ namespace test_portal.classes
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Failed to execute query: {ex.Message}", "Error");
+                MessageBox.Show($"{ex.Message}", "Error");
                 return false;
             }
         }
