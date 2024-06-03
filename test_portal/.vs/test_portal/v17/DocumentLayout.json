@@ -3,19 +3,27 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|c:\\users\\user\\desktop\\test_portal\\test_portal\\test_portal\\forms\\form_for_question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\forms\\form_for_question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|c:\\users\\user\\desktop\\test_portal\\test_portal\\test_portal\\forms\\form_for_question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\forms\\form_for_question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\create_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\forms\\create_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|c:\\users\\user\\desktop\\test_portal\\test_portal\\test_portal\\forms\\create_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\forms\\create_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|c:\\users\\user\\desktop\\test_portal\\test_portal\\test_portal\\forms\\create_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\forms\\create_test.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|c:\\users\\user\\desktop\\test_portal\\test_portal\\test_portal\\forms\\main_admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\main_admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\forms\\main_admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|c:\\users\\user\\desktop\\test_portal\\test_portal\\test_portal\\forms\\main_admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\main_admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{2F079D9E-91A9-4BC1-A032-2797BDB8CA22}|test_portal\\test_portal.csproj|solutionrelative:test_portal\\forms\\main_admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -34,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,20 +50,45 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form_for_question.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Form_for_question.cs",
+              "RelativeDocumentMoniker": "test_portal\\forms\\Form_for_question.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Form_for_question.cs",
+              "RelativeToolTip": "test_portal\\forms\\Form_for_question.cs",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAADoAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T10:38:31.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Form_for_question.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Form_for_question.cs",
+              "RelativeDocumentMoniker": "test_portal\\forms\\Form_for_question.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Form_for_question.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "test_portal\\forms\\Form_for_question.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T10:20:45.682Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Create_test.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Create_test.cs",
               "RelativeDocumentMoniker": "test_portal\\forms\\Create_test.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Create_test.cs",
               "RelativeToolTip": "test_portal\\forms\\Create_test.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAUwBoAAAArAAAA",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwCQAAABmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-01T21:50:29.864Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Create_test.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Create_test.cs",
               "RelativeDocumentMoniker": "test_portal\\forms\\Create_test.cs",
@@ -67,20 +100,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Main_admin.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Main_admin.cs",
               "RelativeDocumentMoniker": "test_portal\\forms\\Main_admin.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Main_admin.cs",
               "RelativeToolTip": "test_portal\\forms\\Main_admin.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAiwE4AAAAbAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAAAIwDMAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-01T21:02:26.262Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Main_admin.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\forms\\Main_admin.cs",
               "RelativeDocumentMoniker": "test_portal\\forms\\Main_admin.cs",
@@ -92,7 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Account.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\classes\\Account.cs",
               "RelativeDocumentMoniker": "test_portal\\classes\\Account.cs",
@@ -104,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "DataBaseOperation.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\Test_portal\\test_portal\\test_portal\\classes\\DataBaseOperation.cs",
               "RelativeDocumentMoniker": "test_portal\\classes\\DataBaseOperation.cs",
@@ -112,8 +145,7 @@
               "RelativeToolTip": "test_portal\\classes\\DataBaseOperation.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-01T12:27:28.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-01T12:27:28.13Z"
             }
           ]
         }

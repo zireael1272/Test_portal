@@ -49,7 +49,7 @@ namespace test_portal
 
         private void create_test_Click_1(object sender, EventArgs e)
         {
-            Create_test create_Test = new Create_test();
+            Create_test create_Test = new Create_test(this);
             OpenChildForm(create_Test, sender);
         }
 

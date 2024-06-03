@@ -13,9 +13,11 @@ namespace test_portal.forms
 {
     public partial class Create_test : Form
     {
-        public Create_test()
+        private Main_admin parentForm;
+        public Create_test(Main_admin parentForm)
         {
             InitializeComponent();
+            this.parentForm = parentForm;
             numberAnswers.Wrap = false;
             numberAnswers.Items.Add(6);
             numberAnswers.Items.Add(5);
@@ -30,7 +32,10 @@ namespace test_portal.forms
 
         private void createTest_Click(object sender, EventArgs e)
         {
-
+            int.TryParse(numberQuestion.Text, out int number_question);
+            int.TryParse(numberAnswers.Text, out int number_answer);
+            Form_for_question form_For_Question = new Form_for_question(number_question, number_answer);
+            this.parentForm.OpenChildForm(form_For_Question, sender);
         }
     }
 }

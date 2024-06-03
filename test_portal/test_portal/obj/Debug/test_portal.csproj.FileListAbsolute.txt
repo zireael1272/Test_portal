@@ -28,3 +28,4 @@ C:\Users\User\Desktop\Test_portal\test_portal\test_portal\obj\Debug\test_portal.
 C:\Users\User\Desktop\Test_portal\test_portal\test_portal\obj\Debug\test_portal.forms.Create_test.resources
 C:\Users\User\Desktop\Test_portal\test_portal\test_portal\obj\Debug\test_portal.forms.Settings.resources
 C:\Users\User\Desktop\Test_portal\test_portal\test_portal\obj\Debug\test_portal.forms.Settings_user.resources
+C:\Users\User\Desktop\Test_portal\test_portal\test_portal\obj\Debug\test_portal.forms.Form_for_question.resources
