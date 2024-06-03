@@ -15,9 +15,6 @@ namespace test_portal.forms
         private int number_question;
         private int number_answer;
 
-        private List<TextBox> answerTextBoxes = new List<TextBox>();
-        private List<CheckBox> correctCheckBoxes = new List<CheckBox>();
-        private List<Label> answerLabels = new List<Label>();
 
         public Form_for_question(int number_question, int number_answer)
         {
@@ -31,35 +28,30 @@ namespace test_portal.forms
         {
             for (int i = 0; i < number_answer; i++)
             {
-                // Додавання Label
                 var label = new Label
                 {
                     Text = $"{i + 1}",
                     Top = 95 + (i * 40),
-                    Left = 30,
+                    Left = 160,
                     Width = 10
                 };
                 this.Controls.Add(label);
-                answerLabels.Add(label);
 
-                // Додавання TextBox
                 var textBox = new TextBox
                 {
                     Top = 110 + (i * 40),
-                    Left = 30,
+                    Left = 160,
                     Width = 220
                 };
                 this.Controls.Add(textBox);
-                answerTextBoxes.Add(textBox);
 
-                // Додавання CheckBox
                 var checkBox = new CheckBox
                 {
                     Top = 109 + (i * 40),
-                    Left = 270
+                    Left = 400
                 };
                 this.Controls.Add(checkBox);
-                correctCheckBoxes.Add(checkBox);
+
             }
         }
 

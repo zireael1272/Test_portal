@@ -39,7 +39,7 @@
             this.AddQuestion.FlatAppearance.BorderSize = 0;
             this.AddQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.AddQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.AddQuestion.Location = new System.Drawing.Point(562, 410);
+            this.AddQuestion.Location = new System.Drawing.Point(314, 429);
             this.AddQuestion.Name = "AddQuestion";
             this.AddQuestion.Size = new System.Drawing.Size(145, 45);
             this.AddQuestion.TabIndex = 0;
