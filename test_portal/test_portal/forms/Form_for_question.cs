@@ -14,7 +14,6 @@ namespace test_portal.forms
 {
     public partial class Form_for_question : Form
     {
-        private int number_question;
         private int number_answer;
         private int testID;
         private List<TextBox> answerTextBoxes = new List<TextBox>();
@@ -22,11 +21,10 @@ namespace test_portal.forms
         private List<Label> answerLabels = new List<Label>();
         private DataBaseOperation dataBaseOperation { get; set; }
 
-        public Form_for_question(int testID, int number_question, int number_answer)
+        public Form_for_question(int testID, int number_answer)
         {
             InitializeComponent();
             this.testID = testID;
-            this.number_question = number_question;
             this.number_answer = number_answer;
             CreateFieldAnswer(this.number_answer);
             dataBaseOperation = new DataBaseOperation();

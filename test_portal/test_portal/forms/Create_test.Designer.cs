@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.createTest = new System.Windows.Forms.Button();
-            this.numberQuestion = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numberAnswers = new System.Windows.Forms.DomainUpDown();
             this.namegroup = new System.Windows.Forms.ComboBox();
@@ -53,39 +51,20 @@
             this.createTest.UseVisualStyleBackColor = false;
             this.createTest.Click += new System.EventHandler(this.createTest_Click);
             // 
-            // numberQuestion
-            // 
-            this.numberQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numberQuestion.Location = new System.Drawing.Point(113, 186);
-            this.numberQuestion.Multiline = true;
-            this.numberQuestion.Name = "numberQuestion";
-            this.numberQuestion.Size = new System.Drawing.Size(180, 30);
-            this.numberQuestion.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(109, 163);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 18);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Number question";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(112, 242);
+            this.label2.Location = new System.Drawing.Point(112, 189);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 18);
+            this.label2.Size = new System.Drawing.Size(194, 18);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Number answer";
+            this.label2.Text = "Number answer on question\r\n";
             // 
             // numberAnswers
             // 
             this.numberAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numberAnswers.Location = new System.Drawing.Point(115, 266);
+            this.numberAnswers.Location = new System.Drawing.Point(115, 213);
             this.numberAnswers.Name = "numberAnswers";
             this.numberAnswers.ReadOnly = true;
             this.numberAnswers.Size = new System.Drawing.Size(178, 26);
@@ -96,7 +75,7 @@
             // 
             this.namegroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.namegroup.FormattingEnabled = true;
-            this.namegroup.Location = new System.Drawing.Point(504, 234);
+            this.namegroup.Location = new System.Drawing.Point(504, 213);
             this.namegroup.Name = "namegroup";
             this.namegroup.Size = new System.Drawing.Size(180, 28);
             this.namegroup.TabIndex = 5;
@@ -105,7 +84,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(500, 213);
+            this.label3.Location = new System.Drawing.Point(500, 192);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 18);
             this.label3.TabIndex = 6;
@@ -141,9 +120,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.namegroup);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.numberAnswers);
-            this.Controls.Add(this.numberQuestion);
             this.Controls.Add(this.createTest);
             this.Name = "Create_test";
             this.Text = "Create_test";
@@ -155,8 +132,6 @@
         #endregion
 
         private System.Windows.Forms.Button createTest;
-        private System.Windows.Forms.TextBox numberQuestion;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DomainUpDown numberAnswers;
         private System.Windows.Forms.ComboBox namegroup;

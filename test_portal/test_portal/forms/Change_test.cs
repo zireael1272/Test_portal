@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace test_portal.forms
 {
-    public partial class Settings : Form
+    public partial class Change_test : Form
     {
-        public Settings()
+        public Change_test()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace test_portal.forms
 {
-    partial class Settings
+    partial class Change_test
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // Settings
+            // Change_test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(790, 467);
-            this.Name = "Settings";
-            this.Text = "Settings";
+            this.Name = "Change_test";
+            this.Text = "Change_test";
             this.ResumeLayout(false);
 
         }

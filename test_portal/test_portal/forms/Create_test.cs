@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using test_portal.classes;
 using test_portal.forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace test_portal.forms
 {
@@ -40,36 +41,38 @@ namespace test_portal.forms
             namegroup.Items.Add("Chemistry");
         }
 
-        private void createTest_Click(object sender, EventArgs e)
+        private bool InputisInputValid()
         {
-            if(NameTest.Text == "")
+            if (NameTest.Text == "")
             {
                 MessageBox.Show("Field name test empty", "Error");
-                return;
-            }
-            else if (numberQuestion.Text == "")
-            {
-                MessageBox.Show("Field number question empty", "Error");
-                return;
+                return false;
             }
             else if (numberAnswers.Text == "0")
             {
                 MessageBox.Show("Field number answer incorrect", "Error");
-                return;
+                return false;
             }
             else if (namegroup.Text == "")
             {
                 MessageBox.Show("Field name group empty", "Error");
-                return;
+                return false;
             }
+            return true;
+        }
+
+        private void createTest_Click(object sender, EventArgs e)
+        {
+            if (!InputisInputValid())
+                return;
+
             string nametest = NameTest.Text;
             string nameGroup = namegroup.Text;
             if (dataBaseOperation.CreateTest(nametest, nameGroup))
             {
                 int testID = dataBaseOperation.GetTestID(nametest, nameGroup);
-                int.TryParse(numberQuestion.Text, out int number_question);
                 int.TryParse(numberAnswers.Text, out int number_answer);
-                Form_for_question form_For_Question = new Form_for_question(testID, number_question, number_answer);
+                Form_for_question form_For_Question = new Form_for_question(testID, number_answer);
                 this.parentForm.OpenChildForm(form_For_Question, sender);
             }
             else

@@ -55,8 +55,8 @@ namespace test_portal
 
         private void settings_Click_1(object sender, EventArgs e)
         {
-            Settings settings = new Settings();
-            OpenChildForm(settings, sender);
+            Change_test change_Test = new Change_test();
+            OpenChildForm(change_Test, sender);
         }
 
         private void exit_Click_1(object sender, EventArgs e)

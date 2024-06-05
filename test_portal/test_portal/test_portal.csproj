@@ -49,6 +49,12 @@
     <Compile Include="classes\Account.cs" />
     <Compile Include="classes\DataBaseOperation.cs" />
     <Compile Include="classes\LoginInput.cs" />
+    <Compile Include="forms\Change_test.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Change_test.Designer.cs">
+      <DependentUpon>Change_test.cs</DependentUpon>
+    </Compile>
     <Compile Include="forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,12 +78,6 @@
     </Compile>
     <Compile Include="forms\Form_for_question.Designer.cs">
       <DependentUpon>Form_for_question.cs</DependentUpon>
-    </Compile>
-    <Compile Include="forms\Settings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\Settings.Designer.cs">
-      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\Settings_user.cs">
       <SubType>Form</SubType>
@@ -105,6 +105,9 @@
     <Compile Include="forms\sign_in.Designer.cs">
       <DependentUpon>sign_in.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="forms\Change_test.resx">
+      <DependentUpon>Change_test.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="forms\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,9 +119,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Form_for_question.resx">
       <DependentUpon>Form_for_question.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="forms\Settings.resx">
-      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Settings_user.resx">
       <DependentUpon>Settings_user.cs</DependentUpon>
