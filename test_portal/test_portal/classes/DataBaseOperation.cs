@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace test_portal.classes
 {
-    public class DataBaseOperation 
+    public class DataBaseOperation
     {
         private readonly OleDbConnection _dbConnection;
         public DataBaseOperation()
@@ -108,6 +109,120 @@ namespace test_portal.classes
             }
         }
 
+        public bool CreateTest(string testName, string groupName)
+        {
+            if (_dbConnection.State != System.Data.ConnectionState.Open)
+            {
+                MessageBox.Show("Database connection is not open.", "Error");
+                return false;
+            }
 
-    }
+            try
+            {
+                string queryTest = "INSERT INTO NameTest ([Name], [Group]) VALUES (?, ?)";
+                using (OleDbCommand commandTest = new OleDbCommand(queryTest, _dbConnection))
+                {
+                    commandTest.Parameters.AddWithValue("?", testName);
+                    commandTest.Parameters.AddWithValue("?", groupName);
+                    commandTest.ExecuteNonQuery();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Error");
+                return false;
+            }
+        }
+
+        public bool SaveQuestionToDatabase(int testID, string questionText, List<TextBox> answerTextBoxes, List<CheckBox> correctCheckBoxes)
+        {
+            if (_dbConnection.State != System.Data.ConnectionState.Open)
+            {
+                MessageBox.Show("Database connection is not open.", "Error");
+                return false;
+            }
+
+            OleDbTransaction transaction = _dbConnection.BeginTransaction();
+
+            try
+            {
+                string queryQuestion = "INSERT INTO QuestionTests (TestID, Question) VALUES (?, ?)";
+                using (OleDbCommand commandQuestion = new OleDbCommand(queryQuestion, _dbConnection))
+                {
+                    commandQuestion.Transaction = transaction;
+                    commandQuestion.Parameters.AddWithValue("?", testID);
+                    commandQuestion.Parameters.AddWithValue("?", questionText);
+                    commandQuestion.ExecuteNonQuery();
+                }
+
+                string queryQuestionID = "SELECT @@IDENTITY";
+                int questionID;
+                using (OleDbCommand commandQuestionID = new OleDbCommand(queryQuestionID, _dbConnection))
+                {
+                    commandQuestionID.Transaction = transaction;
+                    questionID = (int)commandQuestionID.ExecuteScalar();
+                }
+
+                string queryAnswer = "INSERT INTO Answers (NumberQuestion, Answer, IsCorrect) VALUES (?, ?, ?)";
+                using (OleDbCommand commandAnswer = new OleDbCommand(queryAnswer, _dbConnection))
+                {
+                    commandAnswer.Transaction = transaction;
+
+                    for (int i = 0; i < answerTextBoxes.Count; i++)
+                    {
+                        commandAnswer.Parameters.Clear();
+                        commandAnswer.Parameters.AddWithValue("?", questionID);
+                        commandAnswer.Parameters.AddWithValue("?", answerTextBoxes[i].Text);
+                        commandAnswer.Parameters.AddWithValue("?", correctCheckBoxes[i].Checked);
+                        commandAnswer.ExecuteNonQuery();
+                    }
+                }
+
+                transaction.Commit();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                MessageBox.Show($"{ex.Message}", "Error");
+                return false;
+            }
+        }
+        public int GetTestID(string testName, string groupName)
+        {
+            if (_dbConnection.State != System.Data.ConnectionState.Open)
+            {
+                MessageBox.Show("Database connection is not open.", "Error");
+                return -1;
+            }
+
+            try
+            {
+                string query = "SELECT TestID FROM NameTest WHERE [Name] = ? AND [Group] = ?";
+                using (OleDbCommand command = new OleDbCommand(query, _dbConnection))
+                {
+                    command.Parameters.AddWithValue("?", testName);
+                    command.Parameters.AddWithValue("?", groupName);
+                    object result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Error");
+                return -1;
+            }
+        }
+
+    } 
+
+
 }

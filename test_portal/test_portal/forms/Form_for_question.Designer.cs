@@ -49,7 +49,7 @@
             // 
             // textQuestion
             // 
-            this.textQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textQuestion.Location = new System.Drawing.Point(71, 68);
             this.textQuestion.Multiline = true;
             this.textQuestion.Name = "textQuestion";
