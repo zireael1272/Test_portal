@@ -68,7 +68,8 @@ namespace test_portal.forms
 
             string nametest = NameTest.Text;
             string nameGroup = namegroup.Text;
-            if (dataBaseOperation.CreateTest(nametest, nameGroup))
+            int.TryParse(numberAnswers.Text, out int number_answers);
+            if (dataBaseOperation.CreateTest(nametest, nameGroup, number_answers))
             {
                 int testID = dataBaseOperation.GetTestID(nametest, nameGroup);
                 int.TryParse(numberAnswers.Text, out int number_answer);

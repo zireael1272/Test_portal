@@ -55,7 +55,7 @@ namespace test_portal
 
         private void settings_Click_1(object sender, EventArgs e)
         {
-            Change_test change_Test = new Change_test();
+            Change_test change_Test = new Change_test(this);
             OpenChildForm(change_Test, sender);
         }
 
