@@ -30,7 +30,6 @@
         {
             this.panelmenu = new System.Windows.Forms.Panel();
             this.exit = new System.Windows.Forms.Button();
-            this.settings = new System.Windows.Forms.Button();
             this.tests = new System.Windows.Forms.Button();
             this.panelacc = new System.Windows.Forms.Panel();
             this.nametitle = new System.Windows.Forms.Label();
@@ -46,7 +45,6 @@
             // 
             this.panelmenu.BackColor = System.Drawing.Color.PeachPuff;
             this.panelmenu.Controls.Add(this.exit);
-            this.panelmenu.Controls.Add(this.settings);
             this.panelmenu.Controls.Add(this.tests);
             this.panelmenu.Controls.Add(this.panelacc);
             this.panelmenu.Dock = System.Windows.Forms.DockStyle.Right;
@@ -61,27 +59,13 @@
             this.exit.FlatAppearance.BorderSize = 0;
             this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.exit.Location = new System.Drawing.Point(0, 201);
+            this.exit.Location = new System.Drawing.Point(0, 140);
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(224, 61);
             this.exit.TabIndex = 6;
             this.exit.Text = "Exit";
             this.exit.UseVisualStyleBackColor = true;
             this.exit.Click += new System.EventHandler(this.exit_Click_1);
-            // 
-            // settings
-            // 
-            this.settings.Dock = System.Windows.Forms.DockStyle.Top;
-            this.settings.FlatAppearance.BorderSize = 0;
-            this.settings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settings.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.settings.Location = new System.Drawing.Point(0, 140);
-            this.settings.Name = "settings";
-            this.settings.Size = new System.Drawing.Size(224, 61);
-            this.settings.TabIndex = 5;
-            this.settings.Text = "Settings";
-            this.settings.UseVisualStyleBackColor = true;
-            this.settings.Click += new System.EventHandler(this.settings_Click_1);
             // 
             // tests
             // 
@@ -178,7 +162,6 @@
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button exit;
-        private System.Windows.Forms.Button settings;
         private System.Windows.Forms.Button tests;
         private System.Windows.Forms.Panel panelacc;
         private System.Windows.Forms.Label nametitle;

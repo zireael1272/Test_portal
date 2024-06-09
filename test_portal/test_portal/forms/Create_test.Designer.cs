@@ -55,7 +55,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(112, 189);
+            this.label2.Location = new System.Drawing.Point(503, 193);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(194, 18);
             this.label2.TabIndex = 4;
@@ -64,18 +64,19 @@
             // numberAnswers
             // 
             this.numberAnswers.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numberAnswers.Location = new System.Drawing.Point(115, 213);
+            this.numberAnswers.Location = new System.Drawing.Point(506, 217);
             this.numberAnswers.Name = "numberAnswers";
             this.numberAnswers.ReadOnly = true;
             this.numberAnswers.Size = new System.Drawing.Size(178, 26);
             this.numberAnswers.TabIndex = 2;
             this.numberAnswers.Text = "0";
+            this.numberAnswers.KeyDown += new System.Windows.Forms.KeyEventHandler(this.numberAnswers_KeyDown);
             // 
             // namegroup
             // 
             this.namegroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.namegroup.FormattingEnabled = true;
-            this.namegroup.Location = new System.Drawing.Point(504, 213);
+            this.namegroup.Location = new System.Drawing.Point(115, 215);
             this.namegroup.Name = "namegroup";
             this.namegroup.Size = new System.Drawing.Size(180, 28);
             this.namegroup.TabIndex = 5;
@@ -84,7 +85,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(500, 192);
+            this.label3.Location = new System.Drawing.Point(111, 194);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 18);
             this.label3.TabIndex = 6;
@@ -98,6 +99,7 @@
             this.NameTest.Name = "NameTest";
             this.NameTest.Size = new System.Drawing.Size(569, 34);
             this.NameTest.TabIndex = 7;
+            this.NameTest.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NameTest_KeyDown);
             // 
             // label4
             // 

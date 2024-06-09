@@ -49,6 +49,7 @@
     <Compile Include="classes\Account.cs" />
     <Compile Include="classes\DataBaseOperation.cs" />
     <Compile Include="classes\LoginInput.cs" />
+    <Compile Include="classes\TestDetails.cs" />
     <Compile Include="forms\AddQuestionInTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,11 +86,11 @@
     <Compile Include="forms\Form_for_question.Designer.cs">
       <DependentUpon>Form_for_question.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Settings_user.cs">
+    <Compile Include="forms\Run_Test.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Settings_user.Designer.cs">
-      <DependentUpon>Settings_user.cs</DependentUpon>
+    <Compile Include="forms\Run_Test.Designer.cs">
+      <DependentUpon>Run_Test.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\Main_admin.cs">
       <SubType>Form</SubType>
@@ -102,6 +103,12 @@
     </Compile>
     <Compile Include="forms\Main_user.Designer.cs">
       <DependentUpon>Main_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Tests_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Tests_View.Designer.cs">
+      <DependentUpon>Tests_View.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,14 +136,17 @@
     <EmbeddedResource Include="forms\Form_for_question.resx">
       <DependentUpon>Form_for_question.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Settings_user.resx">
-      <DependentUpon>Settings_user.cs</DependentUpon>
+    <EmbeddedResource Include="forms\Run_Test.resx">
+      <DependentUpon>Run_Test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Main_admin.resx">
       <DependentUpon>Main_admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\Main_user.resx">
       <DependentUpon>Main_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Tests_View.resx">
+      <DependentUpon>Tests_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

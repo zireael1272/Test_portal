@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.OleDb;
 using System.Windows.Forms;
 using System.Collections;
+using static test_portal.classes.TestDetails;
 
 namespace test_portal.classes
 {
@@ -119,12 +120,25 @@ namespace test_portal.classes
 
             try
             {
-                string queryTest = "INSERT INTO NameTest ([Name], [Group], [NumberAnswers]) VALUES (?, ?, ?)";
+                // Check if the test already exists
+                string checkQuery = "SELECT COUNT(*) FROM NameTest WHERE [Name] = ? AND [Group] = ?";
+                using (OleDbCommand checkCommand = new OleDbCommand(checkQuery, _dbConnection))
+                {
+                    checkCommand.Parameters.AddWithValue("?", testName);
+                    checkCommand.Parameters.AddWithValue("?", groupName);
+                    int count = (int)checkCommand.ExecuteScalar();
+                    if (count > 0)
+                    {
+                        MessageBox.Show("A test with the same name and group already exists.", "Error");
+                        return false;
+                    }
+                }
+
+                string queryTest = "INSERT INTO NameTest ([Name], [Group]) VALUES (?, ?)";
                 using (OleDbCommand commandTest = new OleDbCommand(queryTest, _dbConnection))
                 {
                     commandTest.Parameters.AddWithValue("?", testName);
                     commandTest.Parameters.AddWithValue("?", groupName);
-                    commandTest.Parameters.AddWithValue("?", number_answers);
                     commandTest.ExecuteNonQuery();
                 }
                 return true;
@@ -224,38 +238,23 @@ namespace test_portal.classes
             }
         }
 
-        public List<Tuple<string, string>> GetAllTests()
+        public List<Tuple<string, string, int>> GetAllTests()
         {
-            List<Tuple<string, string>> tests = new List<Tuple<string, string>>();
-
-            if (_dbConnection.State != System.Data.ConnectionState.Open)
+            var tests = new List<Tuple<string, string, int>>();
+            string query = "SELECT TestID, Name, [Group] FROM NameTest";
+            using (OleDbCommand command = new OleDbCommand(query, _dbConnection))
             {
-                MessageBox.Show("Database connection is not open.", "Error");
-                return tests;
-            }
-
-            string query = "SELECT [Name], [Group] FROM NameTest";
-
-            try
-            {
-                using (OleDbCommand command = new OleDbCommand(query, _dbConnection))
+                using (OleDbDataReader reader = command.ExecuteReader())
                 {
-                    using (OleDbDataReader reader = command.ExecuteReader())
+                    while (reader.Read())
                     {
-                        while (reader.Read())
-                        {
-                            string testName = reader.GetString(0);
-                            string groupName = reader.GetString(1);
-                            tests.Add(new Tuple<string, string>(testName, groupName));
-                        }
+                        int testID = reader.GetInt32(0);
+                        string name = reader.GetString(1);
+                        string group = reader.GetString(2);
+                        tests.Add(new Tuple<string, string, int>(name, group, testID));
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"{ex.Message}", "Error");
-            }
-
             return tests;
         }
 
@@ -284,6 +283,119 @@ namespace test_portal.classes
                 return 0;
             }
         }
+
+        public TestDetails GetTestDetails(int testID)
+        {
+            TestDetails testDetails = new TestDetails();
+            if (_dbConnection.State != System.Data.ConnectionState.Open)
+            {
+                MessageBox.Show("Database connection is not open.", "Error");
+                return testDetails;
+            }
+
+            try
+            {
+                string queryQuestions = "SELECT NumberQuestion, Question FROM QuestionTests WHERE TestID = ?";
+                using (OleDbCommand commandQuestions = new OleDbCommand(queryQuestions, _dbConnection))
+                {
+                    commandQuestions.Parameters.AddWithValue("?", testID);
+                    using (OleDbDataReader readerQuestions = commandQuestions.ExecuteReader())
+                    {
+                        while (readerQuestions.Read())
+                        {
+                            int questionID = int.Parse(readerQuestions["NumberQuestion"].ToString());
+                            string questionText = readerQuestions["Question"].ToString();
+                            testDetails.Questions.Add(new QuestionDetails { QuestionID = questionID, QuestionText = questionText });
+                        }
+                    }
+                }
+
+                foreach (var question in testDetails.Questions)
+                {
+                    string queryAnswers = "SELECT Answer, IsCorrect FROM Answers WHERE NumberQuestion = ?";
+                    using (OleDbCommand commandAnswers = new OleDbCommand(queryAnswers, _dbConnection))
+                    {
+                        commandAnswers.Parameters.AddWithValue("?", question.QuestionID);
+                        using (OleDbDataReader readerAnswers = commandAnswers.ExecuteReader())
+                        {
+                            while (readerAnswers.Read())
+                            {
+                                string answerText = readerAnswers["Answer"].ToString();
+                                bool isCorrect = bool.Parse(readerAnswers["IsCorrect"].ToString());
+                                question.Answers.Add(new AnswerDetails { AnswerText = answerText, IsCorrect = isCorrect });
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Error");
+            }
+
+            return testDetails;
+        }
+
+        public bool SaveTestResult(int userID, int testID, int correctAnswersCount)
+        {
+            if (_dbConnection.State != System.Data.ConnectionState.Open)
+            {
+                MessageBox.Show("Database connection is not open.", "Error");
+                return false;
+            }
+
+            try
+            {
+                string queryCheck = "SELECT COUNT(*) FROM UsersResult WHERE UserID = ? AND TestID = ?";
+                using (OleDbCommand commandCheck = new OleDbCommand(queryCheck, _dbConnection))
+                {
+                    commandCheck.Parameters.AddWithValue("UserID", userID);
+                    commandCheck.Parameters.AddWithValue("TestID", testID);
+                    int count = (int)commandCheck.ExecuteScalar();
+
+                    if (count > 0)
+                    {
+                        string queryUpdate = "UPDATE UsersResult SET Result = ? WHERE UserID = ? AND TestID = ?";
+                        using (OleDbCommand commandUpdate = new OleDbCommand(queryUpdate, _dbConnection))
+                        {
+                            commandUpdate.Parameters.AddWithValue("Result", correctAnswersCount);
+                            commandUpdate.Parameters.AddWithValue("UserID", userID);
+                            commandUpdate.Parameters.AddWithValue("TestID", testID);
+                            commandUpdate.ExecuteNonQuery();
+                        }
+                    }
+                    else
+                    {
+                        string queryInsert = "INSERT INTO UsersResult (UserID, TestID, Result) VALUES (?, ?, ?)";
+                        using (OleDbCommand commandInsert = new OleDbCommand(queryInsert, _dbConnection))
+                        {
+                            commandInsert.Parameters.AddWithValue("UserID", userID);
+                            commandInsert.Parameters.AddWithValue("TestID", testID);
+                            commandInsert.Parameters.AddWithValue("Result", correctAnswersCount);
+                            commandInsert.ExecuteNonQuery();
+                        }
+                    }
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Error");
+                return false;
+            }
+        }
+
+        public int GetTestResult(int userID, int testID)
+        {
+            string query = "SELECT Result FROM UsersResult WHERE UserID = ? AND TestID = ?";
+            using (OleDbCommand command = new OleDbCommand(query, _dbConnection))
+            {
+                command.Parameters.AddWithValue("UserID", userID);
+                command.Parameters.AddWithValue("TestID", testID);
+                object result = command.ExecuteScalar();
+                return result != null ? Convert.ToInt32(result) : -1;
+            }
+        }
     }
-} 
- 
+}

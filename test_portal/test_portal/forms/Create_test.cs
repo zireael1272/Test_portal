@@ -82,5 +82,23 @@ namespace test_portal.forms
                 return;
             }
         }
+
+        private void NameTest_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                namegroup.Focus();
+            }
+        }
+
+        private void numberAnswers_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                createTest.PerformClick();
+            }
+        }
     }
 }

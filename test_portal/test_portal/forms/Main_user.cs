@@ -49,7 +49,8 @@ namespace test_portal
 
         private void tests_Click(object sender, EventArgs e)
         {
-
+            Tests_View tests_View = new Tests_View(this, accountObj.Id);
+            OpenChildForm(tests_View, sender);
         }
 
         private void settings_Click_1(object sender, EventArgs e)

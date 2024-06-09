@@ -11,18 +11,24 @@ using test_portal.classes;
 
 namespace test_portal.forms
 {
-    public partial class Change_test : Form
+    public partial class Tests_View : Form
     {
         private DataBaseOperation dataBaseOperation { get; set; }
-        private Main_admin parentForm;
-
-        public Change_test(Main_admin parentForm)
+        private Main_user parentForm;
+        private int UserID;
+        public Tests_View(Main_user parentForm, int UserID)
         {
             InitializeComponent();
             this.parentForm = parentForm;
             dataBaseOperation = new DataBaseOperation();
+            this.UserID = UserID;
             AddGroup();
             LoadTests();
+        }
+
+        private void TableTests_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         private void AddGroup()
@@ -53,7 +59,8 @@ namespace test_portal.forms
             var tests = dataBaseOperation.GetAllTests();
             foreach (var test in tests)
             {
-                TableTests.Rows.Add(test.Item1, test.Item2);
+                int result = dataBaseOperation.GetTestResult(UserID, test.Item3);
+                TableTests.Rows.Add(test.Item1, test.Item2, result == -1 ? "" : result.ToString());
             }
         }
 
@@ -66,8 +73,8 @@ namespace test_portal.forms
                 string groupName = row.Cells["NameGroup"].Value.ToString();
                 int testID = dataBaseOperation.GetTestID(testName, groupName);
                 int number_answer = dataBaseOperation.GetNumberOfAnswers(testName, groupName);
-                AddQuestionInTest addQuestionInTest = new AddQuestionInTest(testID, number_answer);
-                parentForm.OpenChildForm(addQuestionInTest, sender);
+                Run_Test run_Test = new Run_Test(UserID,testID, number_answer,parentForm);
+                parentForm.OpenChildForm(run_Test, sender);
                 this.Hide();
             }
         }
@@ -75,11 +82,6 @@ namespace test_portal.forms
         private void namegroupsort_SelectedIndexChanged(object sender, EventArgs e)
         {
             SortTestsByGroup();
-        }
-
-        private void TableTests_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

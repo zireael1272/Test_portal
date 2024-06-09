@@ -53,6 +53,7 @@
             this.textQuestion.Location = new System.Drawing.Point(71, 68);
             this.textQuestion.Multiline = true;
             this.textQuestion.Name = "textQuestion";
+            this.textQuestion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textQuestion.Size = new System.Drawing.Size(645, 35);
             this.textQuestion.TabIndex = 1;
             // 
