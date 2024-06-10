@@ -53,12 +53,6 @@ namespace test_portal
             OpenChildForm(tests_View, sender);
         }
 
-        private void settings_Click_1(object sender, EventArgs e)
-        {
-            Settings_user settings_User = new Settings_user();
-            OpenChildForm(settings_User, sender);
-        }
-
         private void exit_Click_1(object sender, EventArgs e)
         {
             List<Form> formsToClose = new List<Form>(Application.OpenForms.Cast<Form>());

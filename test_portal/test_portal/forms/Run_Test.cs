@@ -35,7 +35,9 @@ namespace test_portal.forms
             this.parentForm = parentForm;
             CreateFieldAnswer();
             testDetails = dataBaseOperation.GetTestDetails(testID);
-            DisplayQuestion();
+            Random rnd = new Random();
+            testDetails.Questions = testDetails.Questions.OrderBy(q => rnd.Next()).ToList();
+            DisplayQuestion(this);
         }
 
         private void CreateFieldAnswer()
@@ -59,7 +61,7 @@ namespace test_portal.forms
             }
         }
 
-        private void DisplayQuestion()
+        private void DisplayQuestion(object sender)
         {
             for (int i = 0; i < answer.Count; i++)
             {
@@ -84,6 +86,8 @@ namespace test_portal.forms
             {
                 dataBaseOperation.SaveTestResult(UserID, testID, correctAnswersCount);
                 MessageBox.Show("Test finished.", "Test Result");
+                Tests_View tests_View = new Tests_View(parentForm, UserID);
+                parentForm.OpenChildForm(tests_View, sender);
                 this.Hide();
             }
         }
@@ -114,7 +118,7 @@ namespace test_portal.forms
         {
             CheckAnswers();
             currentQuestionIndex++;
-            DisplayQuestion();
+            DisplayQuestion(sender);
         }
     }
 }

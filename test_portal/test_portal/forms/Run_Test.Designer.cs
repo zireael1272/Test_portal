@@ -40,7 +40,7 @@
             this.textQuestion.Multiline = true;
             this.textQuestion.Name = "textQuestion";
             this.textQuestion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textQuestion.Size = new System.Drawing.Size(574, 40);
+            this.textQuestion.Size = new System.Drawing.Size(574, 51);
             this.textQuestion.TabIndex = 0;
             // 
             // questionbyquestions

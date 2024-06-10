@@ -134,11 +134,12 @@ namespace test_portal.classes
                     }
                 }
 
-                string queryTest = "INSERT INTO NameTest ([Name], [Group]) VALUES (?, ?)";
+                string queryTest = "INSERT INTO NameTest ([Name], [Group], [NumberAnswer]) VALUES (?, ?, ?)";
                 using (OleDbCommand commandTest = new OleDbCommand(queryTest, _dbConnection))
                 {
                     commandTest.Parameters.AddWithValue("?", testName);
                     commandTest.Parameters.AddWithValue("?", groupName);
+                    commandTest.Parameters.AddWithValue("?", number_answers);
                     commandTest.ExecuteNonQuery();
                 }
                 return true;

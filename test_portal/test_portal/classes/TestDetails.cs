@@ -14,6 +14,7 @@ namespace test_portal.classes
             public int QuestionID { get; set; }
             public string QuestionText { get; set; }
             public List<AnswerDetails> Answers { get; set; } = new List<AnswerDetails>();
+            public int CorrectAnswerCount { get; set; }
         }
 
         public class AnswerDetails
