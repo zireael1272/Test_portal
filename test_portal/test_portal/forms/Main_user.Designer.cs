@@ -95,11 +95,12 @@
             // 
             this.nametitle.AutoSize = true;
             this.nametitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nametitle.Location = new System.Drawing.Point(78, 29);
+            this.nametitle.Location = new System.Drawing.Point(52, 21);
             this.nametitle.Name = "nametitle";
             this.nametitle.Size = new System.Drawing.Size(70, 20);
             this.nametitle.TabIndex = 1;
             this.nametitle.Text = "Account";
+            this.nametitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // paneltitle
             // 
@@ -126,6 +127,8 @@
             // 
             // panelDesktop
             // 
+            this.panelDesktop.BackgroundImage = global::test_portal.Properties.Resources.Снимок_экрана_2024_06_11_0952251;
+            this.panelDesktop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelDesktop.Location = new System.Drawing.Point(0, 79);
             this.panelDesktop.Name = "panelDesktop";

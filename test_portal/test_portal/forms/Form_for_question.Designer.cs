@@ -78,6 +78,7 @@
             this.Controls.Add(this.AddQuestion);
             this.Name = "Form_for_question";
             this.Text = "Form_for_question";
+            this.Load += new System.EventHandler(this.Form_for_question_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

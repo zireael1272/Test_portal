@@ -18,19 +18,21 @@ namespace test_portal.forms
         private DataBaseOperation dataBaseOperation { get; set; }
         private int testID;
         private int number_answer;
+        private int number_correct_answer;
         private TestDetails testDetails;
         private int currentQuestionIndex = 0;
-        private int correctAnswersCount = 0;
+        private double correctAnswersCount = 0;
         private List<CheckBox> answer = new List<CheckBox>();
         private int UserID;
         private Main_user parentForm;
 
-        public Run_Test(int userID, int testID, int number_answer, Main_user parentForm)
+        public Run_Test(int userID, int testID, int number_answer, int number_correct_answer, Main_user parentForm)
         {
             InitializeComponent();
             dataBaseOperation = new DataBaseOperation();
             this.testID = testID;
             this.number_answer = number_answer;
+            this.number_correct_answer = number_correct_answer;
             this.UserID = userID;
             this.parentForm = parentForm;
             CreateFieldAnswer();
@@ -56,8 +58,17 @@ namespace test_portal.forms
                     Left = 135,
                     AutoSize = true
                 };
+                checkBox.CheckedChanged += CheckBox_CheckedChanged;
                 this.Controls.Add(checkBox);
                 answer.Add(checkBox);
+            }
+        }
+
+        private void CheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (answer.Count(cb => cb.Checked) > number_correct_answer)
+            {
+                ((CheckBox)sender).Checked = false;
             }
         }
 
@@ -95,22 +106,24 @@ namespace test_portal.forms
         private void CheckAnswers()
         {
             var currentQuestion = testDetails.Questions[currentQuestionIndex];
-            bool allCorrect = true;
+            int correctCount = currentQuestion.Answers.Count(a => a.IsCorrect);
+            int selectedCorrectCount = 0;
 
-            for (int i = 0; i < currentQuestion.Answers.Count; i++)
+            for (int i = 0; i < answer.Count; i++)
             {
                 bool isChecked = answer[i].Checked;
                 bool isCorrect = (bool)answer[i].Tag;
 
-                if (isChecked != isCorrect)
+                if (isChecked && isCorrect)
                 {
-                    allCorrect = false;
+                    selectedCorrectCount++;
                 }
             }
 
-            if (allCorrect)
+            if (selectedCorrectCount > 0)
             {
-                correctAnswersCount++;
+                double fractionCorrect = (double)selectedCorrectCount / correctCount;
+                correctAnswersCount += fractionCorrect;
             }
         }
 

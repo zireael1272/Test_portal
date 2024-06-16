@@ -65,6 +65,11 @@ namespace test_portal
 
             string newlogin = log_in.Text;
             string newpassword = password.Text;
+            if (dataBaseOperation.DoesLoginExist(newlogin))
+            {
+                MessageBox.Show("This login already exists. Please choose a different login.");
+                return;
+            }
             Account newaccount = new Account(3, newlogin, newpassword, "User","","");
             Create_acc create_Acc = new Create_acc(newaccount);
             create_Acc.Show();

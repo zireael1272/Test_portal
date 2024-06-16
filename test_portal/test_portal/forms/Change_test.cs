@@ -31,6 +31,8 @@ namespace test_portal.forms
             namegroupsort.Items.Add("Math");
             namegroupsort.Items.Add("Biology");
             namegroupsort.Items.Add("Chemistry");
+            namegroupsort.Items.Add("Programming");
+            namegroupsort.Items.Add("Physicists");
         }
 
         private void SortTestsByGroup()
@@ -65,9 +67,10 @@ namespace test_portal.forms
                 string testName = row.Cells["NameTest"].Value.ToString();
                 string groupName = row.Cells["NameGroup"].Value.ToString();
                 int testID = dataBaseOperation.GetTestID(testName, groupName);
-                int number_answer = dataBaseOperation.GetNumberOfAnswers(testName, groupName);
-                AddQuestionInTest addQuestionInTest = new AddQuestionInTest(testID, number_answer);
-                parentForm.OpenChildForm(addQuestionInTest, sender);
+                int number_answer, number_correct_answer;
+                (number_answer, number_correct_answer) = dataBaseOperation.GetNumberOfAnswersAndCorrectAnswers(testName, groupName);
+                Form_for_question form_For_Questioт = new Form_for_question(testID, number_answer, number_correct_answer);
+                parentForm.OpenChildForm(form_For_Questioт, sender);
                 this.Hide();
             }
         }

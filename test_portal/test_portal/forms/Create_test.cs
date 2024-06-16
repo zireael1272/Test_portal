@@ -22,6 +22,21 @@ namespace test_portal.forms
             InitializeComponent();
             dataBaseOperation = new DataBaseOperation();
             this.parentForm = parentForm;
+            AddNumberAnswer();
+            AddGroup();
+        }
+
+        private void AddGroup()
+        {
+            namegroup.Items.Add("Math");
+            namegroup.Items.Add("Biology");
+            namegroup.Items.Add("Chemistry");
+            namegroup.Items.Add("Programming");
+            namegroup.Items.Add("Physicists");
+        }
+
+        private void AddNumberAnswer()
+        {
             numberAnswers.Wrap = false;
             numberAnswers.Items.Add(6);
             numberAnswers.Items.Add(5);
@@ -31,18 +46,22 @@ namespace test_portal.forms
             numberAnswers.Items.Add(1);
             numberAnswers.Items.Add(0);
             numberAnswers.SelectedIndex = 6;
-            AddGroup();
-        }
 
-        private void AddGroup()
-        {
-            namegroup.Items.Add("Math");
-            namegroup.Items.Add("Biology");
-            namegroup.Items.Add("Chemistry");
+            number_correct_answer.Wrap = false;
+            number_correct_answer.Items.Add(6);
+            number_correct_answer.Items.Add(5);
+            number_correct_answer.Items.Add(4);
+            number_correct_answer.Items.Add(3);
+            number_correct_answer.Items.Add(2);
+            number_correct_answer.Items.Add(1);
+            number_correct_answer.Items.Add(0);
+            number_correct_answer.SelectedIndex = 6;
         }
 
         private bool InputisInputValid()
         {
+            int.TryParse(number_correct_answer.Text, out int nca);
+            int.TryParse(numberAnswers.Text, out int na);
             if (NameTest.Text == "")
             {
                 MessageBox.Show("Field name test empty", "Error");
@@ -58,6 +77,11 @@ namespace test_portal.forms
                 MessageBox.Show("Field name group empty", "Error");
                 return false;
             }
+            else if(nca > na)
+            {
+                MessageBox.Show("the number of correct answers cannot exceed the number of answers", "Error");
+                return false;
+            }
             return true;
         }
 
@@ -69,11 +93,12 @@ namespace test_portal.forms
             string nametest = NameTest.Text;
             string nameGroup = namegroup.Text;
             int.TryParse(numberAnswers.Text, out int number_answers);
-            if (dataBaseOperation.CreateTest(nametest, nameGroup, number_answers))
+            int.TryParse(number_correct_answer.Text, out int numbercorrectanswer);
+            if (dataBaseOperation.CreateTest(nametest, nameGroup, number_answers, numbercorrectanswer))
             {
                 int testID = dataBaseOperation.GetTestID(nametest, nameGroup);
                 int.TryParse(numberAnswers.Text, out int number_answer);
-                Form_for_question form_For_Question = new Form_for_question(testID, number_answer);
+                Form_for_question form_For_Question = new Form_for_question(testID, number_answer, numbercorrectanswer);
                 this.parentForm.OpenChildForm(form_For_Question, sender);
             }
             else

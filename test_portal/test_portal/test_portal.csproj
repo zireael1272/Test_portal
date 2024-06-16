@@ -50,12 +50,6 @@
     <Compile Include="classes\DataBaseOperation.cs" />
     <Compile Include="classes\LoginInput.cs" />
     <Compile Include="classes\TestDetails.cs" />
-    <Compile Include="forms\AddQuestionInTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="forms\AddQuestionInTest.Designer.cs">
-      <DependentUpon>AddQuestionInTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="forms\Change_test.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,9 +112,6 @@
     <Compile Include="forms\sign_in.Designer.cs">
       <DependentUpon>sign_in.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="forms\AddQuestionInTest.resx">
-      <DependentUpon>AddQuestionInTest.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="forms\Change_test.resx">
       <DependentUpon>Change_test.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +147,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="forms\sign_in.resx">
       <DependentUpon>sign_in.cs</DependentUpon>
@@ -173,6 +165,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Снимок экрана 2024-03-31 205013.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\7e99e2e99c4cd0bc3e5896b61f272255.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Снимок экрана 2024-06-11 095225.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Снимок экрана 2024-06-11 0952251.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

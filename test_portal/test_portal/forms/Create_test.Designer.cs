@@ -35,6 +35,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.NameTest = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.number_correct_answer = new System.Windows.Forms.DomainUpDown();
             this.SuspendLayout();
             // 
             // createTest
@@ -111,12 +113,34 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Name test";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(297, 271);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 18);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Number correct answer";
+            // 
+            // number_correct_answer
+            // 
+            this.number_correct_answer.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.number_correct_answer.Location = new System.Drawing.Point(300, 295);
+            this.number_correct_answer.Name = "number_correct_answer";
+            this.number_correct_answer.ReadOnly = true;
+            this.number_correct_answer.Size = new System.Drawing.Size(178, 26);
+            this.number_correct_answer.TabIndex = 9;
+            this.number_correct_answer.Text = "0";
+            // 
             // Create_test
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(790, 467);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.number_correct_answer);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.NameTest);
             this.Controls.Add(this.label3);
@@ -140,5 +164,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox NameTest;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DomainUpDown number_correct_answer;
     }
 }

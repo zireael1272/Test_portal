@@ -110,7 +110,32 @@ namespace test_portal.classes
             }
         }
 
-        public bool CreateTest(string testName, string groupName, int number_answers)
+        public bool DoesLoginExist(string login)
+        {
+            if (_dbConnection.State != System.Data.ConnectionState.Open)
+            {
+                MessageBox.Show("Database connection is not open.", "Error");
+                return false;
+            }
+
+            string query = "SELECT COUNT(*) FROM Users WHERE [UserName] = ?";
+            try
+            {
+                using (OleDbCommand command = new OleDbCommand(query, _dbConnection))
+                {
+                    command.Parameters.Add("UserName", OleDbType.VarChar).Value = login;
+                    int count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Error");
+                return false;
+            }
+        }
+
+        public bool CreateTest(string testName, string groupName, int number_answers, int number_correct_answer)
         {
             if (_dbConnection.State != System.Data.ConnectionState.Open)
             {
@@ -120,7 +145,6 @@ namespace test_portal.classes
 
             try
             {
-                // Check if the test already exists
                 string checkQuery = "SELECT COUNT(*) FROM NameTest WHERE [Name] = ? AND [Group] = ?";
                 using (OleDbCommand checkCommand = new OleDbCommand(checkQuery, _dbConnection))
                 {
@@ -134,12 +158,13 @@ namespace test_portal.classes
                     }
                 }
 
-                string queryTest = "INSERT INTO NameTest ([Name], [Group], [NumberAnswer]) VALUES (?, ?, ?)";
+                string queryTest = "INSERT INTO NameTest ([Name], [Group], [NumberAnswers], [NumberCorrectAnswer]) VALUES (?, ?, ?, ?)";
                 using (OleDbCommand commandTest = new OleDbCommand(queryTest, _dbConnection))
                 {
                     commandTest.Parameters.AddWithValue("?", testName);
                     commandTest.Parameters.AddWithValue("?", groupName);
                     commandTest.Parameters.AddWithValue("?", number_answers);
+                    commandTest.Parameters.AddWithValue("?", number_correct_answer);
                     commandTest.ExecuteNonQuery();
                 }
                 return true;
@@ -206,6 +231,32 @@ namespace test_portal.classes
             }
         }
 
+        public bool DoesQuestionExist(int testID, string questionText)
+        {
+            if (_dbConnection.State != System.Data.ConnectionState.Open)
+            {
+                MessageBox.Show("Database connection is not open.", "Error");
+                return false;
+            }
+
+            string query = "SELECT COUNT(*) FROM QuestionTests WHERE TestID = ? AND Question = ?";
+            try
+            {
+                using (OleDbCommand command = new OleDbCommand(query, _dbConnection))
+                {
+                    command.Parameters.AddWithValue("?", testID);
+                    command.Parameters.AddWithValue("?", questionText);
+                    int count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Error");
+                return false;
+            }
+        }
+
         public int GetTestID(string testName, string groupName)
         {
             if (_dbConnection.State != System.Data.ConnectionState.Open)
@@ -259,29 +310,41 @@ namespace test_portal.classes
             return tests;
         }
 
-        public int GetNumberOfAnswers(string testName, string groupName)
+        public (int numberOfAnswers, int numberOfCorrectAnswers) GetNumberOfAnswersAndCorrectAnswers(string testName, string groupName)
         {
             if (_dbConnection.State != System.Data.ConnectionState.Open)
             {
                 MessageBox.Show("Database connection is not open.", "Error");
-                return 0;
+                return (0, 0);
             }
 
-            string query = "SELECT NumberAnswers FROM NameTest WHERE [Name] = ? AND [Group] = ?";
+            string query = "SELECT NumberAnswers, NumberCorrectAnswer FROM NameTest WHERE [Name] = ? AND [Group] = ?";
             try
             {
                 using (OleDbCommand dbCommand = new OleDbCommand(query, _dbConnection))
                 {
                     dbCommand.Parameters.AddWithValue("?", testName);
                     dbCommand.Parameters.AddWithValue("?", groupName);
-                    int numberOfAnswers = (int)dbCommand.ExecuteScalar();
-                    return numberOfAnswers;
+
+                    using (OleDbDataReader reader = dbCommand.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            int numberOfAnswers = reader.GetInt32(0);
+                            int numberOfCorrectAnswers = reader.GetInt32(1);
+                            return (numberOfAnswers, numberOfCorrectAnswers);
+                        }
+                        else
+                        {
+                            return (0, 0);
+                        }
+                    }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"{ex.Message}", "Error");
-                return 0;
+                return (0, 0);
             }
         }
 
@@ -337,7 +400,7 @@ namespace test_portal.classes
             return testDetails;
         }
 
-        public bool SaveTestResult(int userID, int testID, int correctAnswersCount)
+        public bool SaveTestResult(int userID, int testID, double correctAnswersCount)
         {
             if (_dbConnection.State != System.Data.ConnectionState.Open)
             {
@@ -387,15 +450,37 @@ namespace test_portal.classes
             }
         }
 
-        public int GetTestResult(int userID, int testID)
+        public double GetTestResult(int userID, int testID)
         {
-            string query = "SELECT Result FROM UsersResult WHERE UserID = ? AND TestID = ?";
-            using (OleDbCommand command = new OleDbCommand(query, _dbConnection))
+            if (_dbConnection.State != System.Data.ConnectionState.Open)
             {
-                command.Parameters.AddWithValue("UserID", userID);
-                command.Parameters.AddWithValue("TestID", testID);
-                object result = command.ExecuteScalar();
-                return result != null ? Convert.ToInt32(result) : -1;
+                MessageBox.Show("Database connection is not open.", "Error");
+                return -1;
+            }
+
+            string query = "SELECT Result FROM UsersResult WHERE UserID = ? AND TestID = ?";
+            try
+            {
+                using (OleDbCommand dbCommand = new OleDbCommand(query, _dbConnection))
+                {
+                    dbCommand.Parameters.AddWithValue("?", userID);
+                    dbCommand.Parameters.AddWithValue("?", testID);
+
+                    object result = dbCommand.ExecuteScalar();
+                    if (result != null && double.TryParse(result.ToString(), out double resultValue))
+                    {
+                        return resultValue;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}", "Error");
+                return -1;
             }
         }
     }

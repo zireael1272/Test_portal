@@ -16,16 +16,18 @@ namespace test_portal.forms
     {
         private int number_answer;
         private int testID;
+        private int number_correct_answer;
         private List<TextBox> answerTextBoxes = new List<TextBox>();
         private List<CheckBox> correctCheckBoxes = new List<CheckBox>();
         private List<Label> answerLabels = new List<Label>();
         private DataBaseOperation dataBaseOperation { get; set; }
 
-        public Form_for_question(int testID, int number_answer)
+        public Form_for_question(int testID, int number_answer, int number_correct_answer)
         {
             InitializeComponent();
             this.testID = testID;
             this.number_answer = number_answer;
+            this.number_correct_answer = number_correct_answer;
             CreateFieldAnswer(this.number_answer);
             dataBaseOperation = new DataBaseOperation();
         }
@@ -84,6 +86,20 @@ namespace test_portal.forms
         private void AddQuestion_Click(object sender, EventArgs e)
         {
             string questionText = textQuestion.Text;
+            int selectedCorrectAnswers = correctCheckBoxes.Count(cb => cb.Checked);
+
+            if (selectedCorrectAnswers != number_correct_answer)
+            {
+                MessageBox.Show($"You must select exactly {number_correct_answer} correct answer", "Error");
+                return;
+            }
+
+            if (dataBaseOperation.DoesQuestionExist(testID, questionText))
+            {
+                MessageBox.Show("This question already exists in the test.", "Error");
+                return;
+            }
+
             if (dataBaseOperation.SaveQuestionToDatabase(testID, questionText, answerTextBoxes, correctCheckBoxes))
             {
                 textQuestion.Clear();
@@ -100,6 +116,11 @@ namespace test_portal.forms
             {
                 MessageBox.Show("Error saving question and answers", "Error");
             }
+        }
+
+        private void Form_for_question_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

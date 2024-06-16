@@ -37,6 +37,8 @@ namespace test_portal.forms
             namegroupsort.Items.Add("Math");
             namegroupsort.Items.Add("Biology");
             namegroupsort.Items.Add("Chemistry");
+            namegroupsort.Items.Add("Programming");
+            namegroupsort.Items.Add("Physicists");
         }
 
         private void SortTestsByGroup()
@@ -59,7 +61,7 @@ namespace test_portal.forms
             var tests = dataBaseOperation.GetAllTests();
             foreach (var test in tests)
             {
-                int result = dataBaseOperation.GetTestResult(UserID, test.Item3);
+                double result = dataBaseOperation.GetTestResult(UserID, test.Item3);
                 TableTests.Rows.Add(test.Item1, test.Item2, result == -1 ? "" : result.ToString());
             }
         }
@@ -72,8 +74,9 @@ namespace test_portal.forms
                 string testName = row.Cells["NameTest"].Value.ToString();
                 string groupName = row.Cells["NameGroup"].Value.ToString();
                 int testID = dataBaseOperation.GetTestID(testName, groupName);
-                int number_answer = dataBaseOperation.GetNumberOfAnswers(testName, groupName);
-                Run_Test run_Test = new Run_Test(UserID,testID, number_answer,parentForm);
+                int number_answer, number_correct_answer;
+                (number_answer, number_correct_answer) = dataBaseOperation.GetNumberOfAnswersAndCorrectAnswers(testName, groupName);
+                Run_Test run_Test = new Run_Test(UserID, testID, number_answer, number_correct_answer, parentForm);
                 parentForm.OpenChildForm(run_Test, sender);
                 this.Hide();
             }

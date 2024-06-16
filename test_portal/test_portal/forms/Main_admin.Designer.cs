@@ -30,13 +30,13 @@
         {
             this.paneltitle = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelmenu = new System.Windows.Forms.Panel();
             this.exit = new System.Windows.Forms.Button();
+            this.change_test = new System.Windows.Forms.Button();
             this.create_test = new System.Windows.Forms.Button();
             this.panelacc = new System.Windows.Forms.Panel();
             this.nametitle = new System.Windows.Forms.Label();
-            this.change_test = new System.Windows.Forms.Button();
+            this.panelDesktop = new System.Windows.Forms.Panel();
             this.paneltitle.SuspendLayout();
             this.panelmenu.SuspendLayout();
             this.panelacc.SuspendLayout();
@@ -65,14 +65,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Main";
             // 
-            // panelDesktop
-            // 
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(0, 79);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(808, 514);
-            this.panelDesktop.TabIndex = 3;
-            // 
             // panelmenu
             // 
             this.panelmenu.BackColor = System.Drawing.Color.PeachPuff;
@@ -99,6 +91,20 @@
             this.exit.Text = "Exit";
             this.exit.UseVisualStyleBackColor = true;
             this.exit.Click += new System.EventHandler(this.exit_Click_1);
+            // 
+            // change_test
+            // 
+            this.change_test.Dock = System.Windows.Forms.DockStyle.Top;
+            this.change_test.FlatAppearance.BorderSize = 0;
+            this.change_test.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.change_test.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.change_test.Location = new System.Drawing.Point(0, 140);
+            this.change_test.Name = "change_test";
+            this.change_test.Size = new System.Drawing.Size(224, 61);
+            this.change_test.TabIndex = 5;
+            this.change_test.Text = "Change test";
+            this.change_test.UseVisualStyleBackColor = true;
+            this.change_test.Click += new System.EventHandler(this.settings_Click_1);
             // 
             // create_test
             // 
@@ -135,19 +141,15 @@
             this.nametitle.Text = "Account";
             this.nametitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // change_test
+            // panelDesktop
             // 
-            this.change_test.Dock = System.Windows.Forms.DockStyle.Top;
-            this.change_test.FlatAppearance.BorderSize = 0;
-            this.change_test.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.change_test.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.change_test.Location = new System.Drawing.Point(0, 140);
-            this.change_test.Name = "change_test";
-            this.change_test.Size = new System.Drawing.Size(224, 61);
-            this.change_test.TabIndex = 5;
-            this.change_test.Text = "Change test";
-            this.change_test.UseVisualStyleBackColor = true;
-            this.change_test.Click += new System.EventHandler(this.settings_Click_1);
+            this.panelDesktop.BackgroundImage = global::test_portal.Properties.Resources.Снимок_экрана_2024_06_11_0952251;
+            this.panelDesktop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(0, 79);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(808, 514);
+            this.panelDesktop.TabIndex = 3;
             // 
             // Main_admin
             // 
