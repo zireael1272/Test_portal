@@ -41,7 +41,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(381, 39);
+            this.label1.Location = new System.Drawing.Point(366, 39);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(97, 18);
             this.label1.TabIndex = 5;
@@ -51,9 +51,9 @@
             // 
             this.namegroupsort.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.namegroupsort.FormattingEnabled = true;
-            this.namegroupsort.Location = new System.Drawing.Point(384, 60);
+            this.namegroupsort.Location = new System.Drawing.Point(369, 60);
             this.namegroupsort.Name = "namegroupsort";
-            this.namegroupsort.Size = new System.Drawing.Size(163, 28);
+            this.namegroupsort.Size = new System.Drawing.Size(178, 28);
             this.namegroupsort.TabIndex = 4;
             this.namegroupsort.SelectedIndexChanged += new System.EventHandler(this.namegroupsort_SelectedIndexChanged);
             // 
@@ -67,11 +67,11 @@
             this.NameGroup,
             this.completed});
             this.TableTests.GridColor = System.Drawing.Color.Tan;
-            this.TableTests.Location = new System.Drawing.Point(69, 114);
+            this.TableTests.Location = new System.Drawing.Point(48, 114);
             this.TableTests.Name = "TableTests";
             this.TableTests.RowHeadersWidth = 51;
             this.TableTests.RowTemplate.Height = 24;
-            this.TableTests.Size = new System.Drawing.Size(667, 319);
+            this.TableTests.Size = new System.Drawing.Size(709, 319);
             this.TableTests.TabIndex = 3;
             this.TableTests.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TableTests_CellContentClick);
             this.TableTests.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TableTests_CellDoubleClick);
@@ -89,6 +89,7 @@
             this.NameGroup.HeaderText = "Name group";
             this.NameGroup.MinimumWidth = 6;
             this.NameGroup.Name = "NameGroup";
+            this.NameGroup.ReadOnly = true;
             this.NameGroup.Width = 150;
             // 
             // completed

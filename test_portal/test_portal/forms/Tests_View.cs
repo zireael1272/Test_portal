@@ -68,7 +68,9 @@ namespace test_portal.forms
 
         private void TableTests_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < TableTests.Rows.Count)
+            int targetColumnIndex = TableTests.Columns["NameTest"].Index; 
+
+            if (e.RowIndex >= 0 && e.RowIndex < TableTests.Rows.Count && e.ColumnIndex == targetColumnIndex)
             {
                 DataGridViewRow row = TableTests.Rows[e.RowIndex];
                 string testName = row.Cells["NameTest"].Value.ToString();
