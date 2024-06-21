@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 using test_portal.classes;
+using test_portal.Interfaces;
 
 namespace test_portal
 {
@@ -31,19 +32,26 @@ namespace test_portal
 
         private void login_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                Application.Exit();
+            }
+            finally
+            {
+                dataBaseOperation.CloseConnection();
+            }
         }
 
         private bool isInputValid()
         {
-            if (log_in.Text == "")
+            if (string.IsNullOrWhiteSpace(log_in.Text))
             {
-                MessageBox.Show("login empty");
+                MessageBox.Show("Login is empty");
                 return false;
             }
-            else if (password.Text == "")
+            else if (string.IsNullOrWhiteSpace(password.Text))
             {
-                MessageBox.Show("password empty");
+                MessageBox.Show("Password is empty");
                 return false;
             }
             return true;
@@ -51,23 +59,26 @@ namespace test_portal
 
         private void Avtorizate_Click(object sender, EventArgs e)
         {
-            LoginInput input = new LoginInput(log_in.Text, password.Text);
             if (!isInputValid()) return;
 
-            Account accountObj = dataBaseOperation.GetAccountByUsername(input);
-            if (accountObj == null)
+            ILoginInput input = new LoginInput(log_in.Text, password.Text);
+            IAccount accountInterface = dataBaseOperation.GetAccountByUsername(input);
+
+            if (accountInterface == null)
             {
-                MessageBox.Show("Error", "Account not");
+                MessageBox.Show("Account not found", "Error");
                 return;
             }
 
-            if(accountObj.Role == "Admin")
+            Account accountObj = (Account)accountInterface;
+
+            if (accountObj.Role == "Admin")
             {
                 Main_admin main_Admin = new Main_admin(accountObj);
                 main_Admin.Show();
                 this.Hide();
             }
-            else if(accountObj.Role == "User")
+            else if (accountObj.Role == "User")
             {
                 Main_user main = new Main_user(accountObj);
                 main.Show();
@@ -90,6 +101,18 @@ namespace test_portal
             {
                 e.SuppressKeyPress = true;
                 Avtorizate.PerformClick();
+            }
+        }
+
+        private void lookpassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lookpassword.Checked)
+            {
+                password.PasswordChar = '\0';
+            }
+            else
+            {
+                password.PasswordChar = '*';
             }
         }
     }

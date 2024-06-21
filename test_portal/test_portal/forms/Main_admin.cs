@@ -43,7 +43,14 @@ namespace test_portal
         }
         private void Main_admin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                Application.Exit();
+            }
+            finally
+            {
+                dataBaseOperation.CloseConnection();
+            }
         }
 
 
@@ -61,22 +68,29 @@ namespace test_portal
 
         private void exit_Click_1(object sender, EventArgs e)
         {
-            List<Form> formsToClose = new List<Form>(Application.OpenForms.Cast<Form>());
-
-            foreach (Form form in formsToClose)
+            try
             {
-                if (form != this)
+                List<Form> formsToClose = new List<Form>(Application.OpenForms.Cast<Form>());
+
+                foreach (Form form in formsToClose)
                 {
-                    form.Close();
+                    if (form != this)
+                    {
+                        form.Close();
+                    }
                 }
+
+                Thread thread = new Thread(() =>
+                {
+                    Application.Run(new login());
+                });
+
+                thread.Start();
             }
-
-            Thread thread = new Thread(() =>
+            finally
             {
-                Application.Run(new login());
-            });
-
-            thread.Start();
+                dataBaseOperation.CloseConnection();
+            }
         }
     }
 }

@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Avtorizate = new System.Windows.Forms.Button();
             this.sign_in = new System.Windows.Forms.Button();
+            this.lookpassword = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // log_in
@@ -49,7 +50,7 @@
             // 
             // password
             // 
-            this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.password.Location = new System.Drawing.Point(105, 271);
             this.password.Multiline = true;
             this.password.Name = "password";
@@ -118,6 +119,18 @@
             this.sign_in.UseVisualStyleBackColor = true;
             this.sign_in.Click += new System.EventHandler(this.sign_in_Click);
             // 
+            // lookpassword
+            // 
+            this.lookpassword.AutoSize = true;
+            this.lookpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lookpassword.Location = new System.Drawing.Point(105, 312);
+            this.lookpassword.Name = "lookpassword";
+            this.lookpassword.Size = new System.Drawing.Size(139, 22);
+            this.lookpassword.TabIndex = 7;
+            this.lookpassword.Text = "check password";
+            this.lookpassword.UseVisualStyleBackColor = true;
+            this.lookpassword.CheckedChanged += new System.EventHandler(this.lookpassword_CheckedChanged);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -125,6 +138,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(452, 523);
+            this.Controls.Add(this.lookpassword);
             this.Controls.Add(this.sign_in);
             this.Controls.Add(this.Avtorizate);
             this.Controls.Add(this.label2);
@@ -151,6 +165,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Avtorizate;
         private System.Windows.Forms.Button sign_in;
+        private System.Windows.Forms.CheckBox lookpassword;
     }
 }
 

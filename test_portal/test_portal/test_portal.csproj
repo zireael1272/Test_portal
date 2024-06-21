@@ -104,6 +104,9 @@
     <Compile Include="forms\Tests_View.Designer.cs">
       <DependentUpon>Tests_View.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaces\IAccount.cs" />
+    <Compile Include="Interfaces\IDBOperations.cs" />
+    <Compile Include="Interfaces\ILoginInput1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="forms\sign_in.cs">

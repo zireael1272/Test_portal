@@ -7,10 +7,11 @@ using System.Data.OleDb;
 using System.Windows.Forms;
 using System.Collections;
 using static test_portal.classes.TestDetails;
+using test_portal.Interfaces;
 
 namespace test_portal.classes
 {
-    public class DataBaseOperation
+    public class DataBaseOperation : IDBOperations
     {
         private readonly OleDbConnection _dbConnection;
         public DataBaseOperation()
@@ -28,7 +29,15 @@ namespace test_portal.classes
             }
         }
 
-        public Account GetAccountByUsername(LoginInput input)
+        public void CloseConnection()
+        {
+            if (_dbConnection.State == System.Data.ConnectionState.Open)
+            {
+                _dbConnection.Close();
+            }
+        }
+
+        public IAccount GetAccountByUsername(ILoginInput input)
         {
             if (_dbConnection.State != System.Data.ConnectionState.Open)
             {
@@ -70,7 +79,7 @@ namespace test_portal.classes
             }
         }
 
-        public bool RegisterNewAccount(Account newAccount)
+        public bool RegisterNewAccount(IAccount newAccount)
         {
             if (_dbConnection.State != System.Data.ConnectionState.Open)
             {
@@ -109,6 +118,7 @@ namespace test_portal.classes
                 return false;
             }
         }
+
 
         public bool DoesLoginExist(string login)
         {

@@ -31,7 +31,14 @@ namespace test_portal
 
         private void sign_in_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                Application.Exit();
+            }
+            finally
+            {
+                dataBaseOperation.CloseConnection();
+            }
         }
 
         private bool isInputValid()
@@ -103,5 +110,16 @@ namespace test_portal
             }
         }
 
+        private void lookpassword_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lookpassword.Checked)
+            {
+                passwordagain.PasswordChar = '\0';
+            }
+            else
+            {
+                passwordagain.PasswordChar = '*';
+            }
+        }
     }
 }

@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using test_portal.Interfaces;
 
 namespace test_portal.classes
 {
-    public class Account
+    public class Account : IAccount
     {
         public int Id { get; set; }
         public string Username { get; set; }

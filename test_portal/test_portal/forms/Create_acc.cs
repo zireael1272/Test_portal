@@ -26,24 +26,31 @@ namespace test_portal.forms
 
         private void Create_acc_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                Application.Exit();
+            }
+            finally
+            {
+                dataBaseOperation.CloseConnection();
+            }
         }
 
         private bool isInputValid()
         {
-            if (first_name.Text == "")
+            if (string.IsNullOrEmpty(first_name.Text))
             {
                 MessageBox.Show("first name empty");
                 return false;
             }
-            else if (last_name.Text == "")
+            else if (string.IsNullOrEmpty(last_name.Text))
             {
                 MessageBox.Show("last name empty");
                 return false;
             }
             else if (!IsAlphabetic(first_name.Text))
             {
-                MessageBox.Show("last name not alphabetic");
+                MessageBox.Show("first name not alphabetic");
                 return false;
             }
             else if (!IsAlphabetic(last_name.Text))
@@ -56,11 +63,13 @@ namespace test_portal.forms
 
         private bool IsAlphabetic(string text)
         {
-            return Regex.IsMatch(text, @"^[a-zA-Z]+$");
+            return Regex.IsMatch(text, @"^[a-zA-ZіІ]+$");
         }
 
         private void create_Click(object sender, EventArgs e)
         {
+            if (!isInputValid())
+                return;
             AccountObj.FirstName = first_name.Text;
             AccountObj.LastName = last_name.Text;
             if (dataBaseOperation.RegisterNewAccount(AccountObj))

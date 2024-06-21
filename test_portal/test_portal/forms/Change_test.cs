@@ -72,7 +72,7 @@ namespace test_portal.forms
                 Form_for_question form_For_Questioт = new Form_for_question(testID, number_answer, number_correct_answer);
                 parentForm.OpenChildForm(form_For_Questioт, sender);
                 this.Hide();
-            }
+            }     
         }
 
         private void namegroupsort_SelectedIndexChanged(object sender, EventArgs e)

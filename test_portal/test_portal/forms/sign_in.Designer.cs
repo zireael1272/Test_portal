@@ -37,6 +37,7 @@
             this.back = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.passwordagain = new System.Windows.Forms.TextBox();
+            this.lookpassword = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // sign
@@ -87,7 +88,7 @@
             // 
             // password
             // 
-            this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.password.Location = new System.Drawing.Point(107, 225);
             this.password.Multiline = true;
             this.password.Name = "password";
@@ -132,7 +133,7 @@
             // 
             // passwordagain
             // 
-            this.passwordagain.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.passwordagain.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.passwordagain.Location = new System.Drawing.Point(107, 308);
             this.passwordagain.Multiline = true;
             this.passwordagain.Name = "passwordagain";
@@ -141,12 +142,25 @@
             this.passwordagain.TabIndex = 14;
             this.passwordagain.KeyDown += new System.Windows.Forms.KeyEventHandler(this.passwordagain_KeyDown);
             // 
+            // lookpassword
+            // 
+            this.lookpassword.AutoSize = true;
+            this.lookpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lookpassword.Location = new System.Drawing.Point(107, 348);
+            this.lookpassword.Name = "lookpassword";
+            this.lookpassword.Size = new System.Drawing.Size(139, 22);
+            this.lookpassword.TabIndex = 16;
+            this.lookpassword.Text = "check password";
+            this.lookpassword.UseVisualStyleBackColor = true;
+            this.lookpassword.CheckedChanged += new System.EventHandler(this.lookpassword_CheckedChanged);
+            // 
             // sign_in
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Snow;
             this.ClientSize = new System.Drawing.Size(452, 523);
+            this.Controls.Add(this.lookpassword);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.passwordagain);
             this.Controls.Add(this.back);
@@ -176,5 +190,6 @@
         private System.Windows.Forms.Button back;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox passwordagain;
+        private System.Windows.Forms.CheckBox lookpassword;
     }
 }
